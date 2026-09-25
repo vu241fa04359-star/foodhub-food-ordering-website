@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodHub | Online Food Ordering</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            🍴 Food<span>Hub</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#offers">Offers</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button class="cart-button" onclick="openCart()">
+            🛒 Cart
+            <span id="cart-count">0</span>
+        </button>
+
+    </nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="small-title">WELCOME TO FOODHUB</p>
+
+        <h1>
+            Delicious Food
+            <br>
+            Delivered To You
+        </h1>
+
+        <p>
+            Order your favorite meals from our restaurant
+            and enjoy fresh food delivered to your doorstep.
+        </p>
+
+        <a href="#menu" class="hero-button">
+            Order Now 🍕
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories">
+
+    <h2>Explore Categories</h2>
+
+    <div class="category-container">
+
+        <button onclick="filterFood('all')">🍽️ All</button>
+        <button onclick="filterFood('pizza')">🍕 Pizza</button>
+        <button onclick="filterFood('burger')">🍔 Burgers</button>
+        <button onclick="filterFood('biryani')">🍗 Biryani</button>
+        <button onclick="filterFood('chinese')">🍜 Chinese</button>
+        <button onclick="filterFood('dessert')">🍰 Desserts</button>
+        <button onclick="filterFood('drinks')">🥤 Drinks</button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<section class="menu-section" id="menu">
+
+    <div class="section-heading">
+
+        <p>OUR MENU</p>
+
+        <h2>Popular Dishes</h2>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Search your favorite food..."
+            onkeyup="searchFood()"
+        >
+
+    </div>
+
+
+    <div class="food-container" id="food-container">
+
+        <!-- FOOD 1 -->
+
+        <div class="food-card" data-category="pizza">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"
+                     alt="Pizza">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Pizza</span>
+
+                <h3>Margherita Pizza</h3>
+
+                <p>Fresh tomato, mozzarella cheese and basil.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹299</strong>
+
+                    <button onclick="addToCart('Margherita Pizza', 299)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 2 -->
+
+        <div class="food-card" data-category="pizza">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80"
+                     alt="Farmhouse Pizza">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Pizza</span>
+
+                <h3>Farmhouse Pizza</h3>
+
+                <p>Loaded with vegetables and melted cheese.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹399</strong>
+
+                    <button onclick="addToCart('Farmhouse Pizza', 399)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 3 -->
+
+        <div class="food-card" data-category="burger">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                     alt="Burger">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Burger</span>
+
+                <h3>Cheese Burger</h3>
+
+                <p>Juicy burger with cheese and fresh vegetables.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹199</strong>
+
+                    <button onclick="addToCart('Cheese Burger', 199)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 4 -->
+
+        <div class="food-card" data-category="burger">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
+                     alt="Chicken Burger">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Burger</span>
+
+                <h3>Chicken Burger</h3>
+
+                <p>Crispy chicken patty with fresh salad and sauce.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹249</strong>
+
+                    <button onclick="addToCart('Chicken Burger', 249)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 5 -->
+
+        <div class="food-card" data-category="biryani">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=800&q=80"
+                     alt="Biryani">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Biryani</span>
+
+                <h3>Chicken Biryani</h3>
+
+                <p>Authentic aromatic chicken biryani with spices.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹349</strong>
+
+                    <button onclick="addToCart('Chicken Biryani', 349)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 6 -->
+
+        <div class="food-card" data-category="biryani">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?auto=format&fit=crop&w=800&q=80"
+                     alt="Veg Biryani">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Biryani</span>
+
+                <h3>Veg Biryani</h3>
+
+                <p>Flavorful basmati rice cooked with fresh vegetables.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹249</strong>
+
+                    <button onclick="addToCart('Veg Biryani', 249)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 7 -->
+
+        <div class="food-card" data-category="chinese">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=800&q=80"
+                     alt="Noodles">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Chinese</span>
+
+                <h3>Veg Noodles</h3>
+
+                <p>Stir-fried noodles with fresh vegetables.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹199</strong>
+
+                    <button onclick="addToCart('Veg Noodles', 199)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 8 -->
+
+        <div class="food-card" data-category="chinese">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"
+                     alt="Fried Rice">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Chinese</span>
+
+                <h3>Fried Rice</h3>
+
+                <p>Chinese-style fried rice with vegetables.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹229</strong>
+
+                    <button onclick="addToCart('Fried Rice', 229)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 9 -->
+
+        <div class="food-card" data-category="dessert">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80"
+                     alt="Brownie">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Dessert</span>
+
+                <h3>Chocolate Brownie</h3>
+
+                <p>Warm chocolate brownie with rich chocolate flavor.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹149</strong>
+
+                    <button onclick="addToCart('Chocolate Brownie', 149)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 10 -->
+
+        <div class="food-card" data-category="dessert">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80"
+                     alt="Donut">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Dessert</span>
+
+                <h3>Chocolate Donut</h3>
+
+                <p>Soft donut covered with delicious chocolate.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹99</strong>
+
+                    <button onclick="addToCart('Chocolate Donut', 99)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 11 -->
+
+        <div class="food-card" data-category="drinks">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=80"
+                     alt="Drink">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Drinks</span>
+
+                <h3>Fresh Lime</h3>
+
+                <p>Refreshing fresh lime drink.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹79</strong>
+
+                    <button onclick="addToCart('Fresh Lime', 79)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD 12 -->
+
+        <div class="food-card" data-category="drinks">
+
+            <div class="food-image">
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80"
+                     alt="Milkshake">
+            </div>
+
+            <div class="food-info">
+
+                <span class="food-category">Drinks</span>
+
+                <h3>Chocolate Milkshake</h3>
+
+                <p>Creamy chocolate milkshake.</p>
+
+                <div class="food-bottom">
+
+                    <strong>₹179</strong>
+
+                    <button onclick="addToCart('Chocolate Milkshake', 179)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OFFERS ================= -->
+
+<section class="offers" id="offers">
+
+    <div class="offer-content">
+
+        <p>LIMITED TIME OFFER</p>
+
+        <h2>Get 20% OFF</h2>
+
+        <h3>On Your First Order</h3>
+
+        <p>
+            Use coupon code
+            <strong>WELCOME20</strong>
+            during checkout.
+        </p>
+
+        <button onclick="showOffer()">
+            Claim Offer
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div>
+
+        <p class="section-label">ABOUT US</p>
+
+        <h2>Good Food.<br>Good Mood.</h2>
+
+        <p>
+            FoodHub is an online food ordering platform created
+            to make delicious food easily available to everyone.
+            We provide freshly prepared meals with fast delivery
+            and excellent customer service.
+        </p>
+
+    </div>
+
+    <div class="about-box">
+
+        <div>
+            <h3>50+</h3>
+            <p>Food Items</p>
+        </div>
+
+        <div>
+            <h3>10K+</h3>
+            <p>Customers</p>
+        </div>
+
+        <div>
+            <h3>30 Min</h3>
+            <p>Average Delivery</p>
+        </div>
+
+        <div>
+            <h3>4.8 ⭐</h3>
+            <p>Customer Rating</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <p class="section-label">GET IN TOUCH</p>
+
+    <h2>Contact FoodHub</h2>
+
+    <div class="contact-container">
+
+        <div>
+            <h3>📍 Address</h3>
+            <p>FoodHub Restaurant, Main Road, India</p>
+        </div>
+
+        <div>
+            <h3>📞 Phone</h3>
+            <p>+91 98765 43210</p>
+        </div>
+
+        <div>
+            <h3>📧 Email</h3>
+            <p>support@foodhub.com</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        🍴 FoodHub
+    </div>
+
+    <p>
+        Fresh food. Fast delivery. Happy customers.
+    </p>
+
+    <p>
+        © 2026 FoodHub. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- ================= CART MODAL ================= -->
+
+<div id="cart-modal" class="modal">
+
+    <div class="cart-box">
+
+        <button class="close-button" onclick="closeCart()">×</button>
+
+        <h2>🛒 Your Cart</h2>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-summary">
+
+            <div>
+                <span>Subtotal</span>
+                <strong id="subtotal">₹0</strong>
+            </div>
+
+            <div>
+                <span>Delivery</span>
+                <strong id="delivery">₹40</strong>
+            </div>
+
+            <div class="total">
+                <span>Total</span>
+                <strong id="total">₹0</strong>
+            </div>
+
+        </div>
+
+        <button class="checkout-button" onclick="checkout()">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CHECKOUT MODAL ================= -->
+
+<div id="checkout-modal" class="modal">
+
+    <div class="checkout-box">
+
+        <button class="close-button" onclick="closeCheckout()">×</button>
+
+        <h2>Checkout</h2>
+
+        <form onsubmit="placeOrder(event)">
+
+            <label>Full Name</label>
+            <input
+                type="text"
+                id="customer-name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label>Phone Number</label>
+            <input
+                type="tel"
+                id="customer-phone"
+                placeholder="Enter phone number"
+                required
+            >
+
+            <label>Delivery Address</label>
+            <textarea
+                id="customer-address"
+                placeholder="Enter your complete address"
+                required
+            ></textarea>
+
+            <label>Payment Method</label>
+
+            <select id="payment">
+                <option value="Cash on Delivery">
+                    Cash on Delivery
+                </option>
+
+                <option value="UPI">
+                    UPI
+                </option>
+
+                <option value="Card">
+                    Credit / Debit Card
+                </option>
+            </select>
+
+            <button type="submit" class="place-order">
+                Place Order
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SUCCESS MODAL ================= -->
+
+<div id="success-modal" class="modal">
+
+    <div class="success-box">
+
+        <div class="success-icon">✓</div>
+
+        <h2>Order Placed Successfully!</h2>
+
+        <p>
+            Thank you for ordering from FoodHub.
+        </p>
+
+        <p>
+            Your food will be delivered soon.
+        </p>
+
+        <h3 id="order-number"></h3>
+
+        <button onclick="closeSuccess()">
+            Continue Shopping
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
