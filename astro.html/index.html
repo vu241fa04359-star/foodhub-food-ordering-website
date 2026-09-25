@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ASTRONOVA | Explore Space</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🚀 ASTRONOVA
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#planets">Planets</a></li>
+                <li><a href="#missions">Missions</a></li>
+                <li><a href="#galaxies">Galaxies</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">WELCOME TO THE UNIVERSE</p>
+
+            <h1>
+                Explore the
+                <span>Infinite</span>
+                Universe
+            </h1>
+
+            <p>
+                Discover planets, galaxies, astronauts and the greatest
+                mysteries beyond Earth.
+            </p>
+
+            <a href="#planets" class="btn">
+                Explore Space
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+            <p>ABOUT ASTRONOVA</p>
+            <h2>Journey Beyond Earth</h2>
+        </div>
+
+        <div class="about-content">
+
+            <div class="about-card">
+                <div class="icon">🌎</div>
+                <h3>Our Universe</h3>
+                <p>
+                    The universe contains billions of galaxies,
+                    stars and planets waiting to be explored.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <div class="icon">🔭</div>
+                <h3>Explore Space</h3>
+                <p>
+                    Modern telescopes and spacecraft help scientists
+                    understand the mysteries of space.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <div class="icon">👨‍🚀</div>
+                <h3>Human Exploration</h3>
+                <p>
+                    Astronauts continue to push the boundaries of
+                    human knowledge beyond our planet.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PLANETS ================= -->
+
+    <section id="planets" class="planets">
+
+        <div class="section-title">
+            <p>OUR SOLAR SYSTEM</p>
+            <h2>Explore The Planets</h2>
+        </div>
+
+        <div class="planet-grid">
+
+            <div class="planet-card">
+                <div class="planet mercury"></div>
+                <h3>Mercury</h3>
+                <p>
+                    The smallest planet and the closest planet to the Sun.
+                </p>
+                <button onclick="showPlanet('Mercury')">
+                    Learn More
+                </button>
+            </div>
+
+            <div class="planet-card">
+                <div class="planet venus"></div>
+                <h3>Venus</h3>
+                <p>
+                    A hot planet covered by a thick atmosphere.
+                </p>
+                <button onclick="showPlanet('Venus')">
+                    Learn More
+                </button>
+            </div>
+
+            <div class="planet-card">
+                <div class="planet earth"></div>
+                <h3>Earth</h3>
+                <p>
+                    Our home planet and the only known planet with life.
+                </p>
+                <button onclick="showPlanet('Earth')">
+                    Learn More
+                </button>
+            </div>
+
+            <div class="planet-card">
+                <div class="planet mars"></div>
+                <h3>Mars</h3>
+                <p>
+                    Known as the Red Planet because of its reddish surface.
+                </p>
+                <button onclick="showPlanet('Mars')">
+                    Learn More
+                </button>
+            </div>
+
+            <div class="planet-card">
+                <div class="planet jupiter"></div>
+                <h3>Jupiter</h3>
+                <p>
+                    The largest planet in our solar system.
+                </p>
+                <button onclick="showPlanet('Jupiter')">
+                    Learn More
+                </button>
+            </div>
+
+            <div class="planet-card">
+                <div class="planet saturn"></div>
+                <h3>Saturn</h3>
+                <p>
+                    Famous for its spectacular system of rings.
+                </p>
+                <button onclick="showPlanet('Saturn')">
+                    Learn More
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MISSIONS ================= -->
+
+    <section id="missions" class="missions">
+
+        <div class="section-title">
+            <p>HUMANITY IN SPACE</p>
+            <h2>Famous Space Missions</h2>
+        </div>
+
+        <div class="mission-grid">
+
+            <div class="mission-card">
+                <span>01</span>
+                <h3>Apollo 11</h3>
+                <p>
+                    The historic mission that successfully landed
+                    humans on the Moon.
+                </p>
+            </div>
+
+            <div class="mission-card">
+                <span>02</span>
+                <h3>Voyager</h3>
+                <p>
+                    Voyager spacecraft have traveled farther than
+                    any other human-made objects.
+                </p>
+            </div>
+
+            <div class="mission-card">
+                <span>03</span>
+                <h3>James Webb</h3>
+                <p>
+                    The James Webb Space Telescope observes distant
+                    stars and galaxies.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALAXIES ================= -->
+
+    <section id="galaxies" class="galaxies">
+
+        <div class="section-title">
+            <p>DEEP SPACE</p>
+            <h2>Discover Galaxies</h2>
+        </div>
+
+        <div class="galaxy-container">
+
+            <div class="galaxy-card">
+
+                <div class="galaxy-image galaxy-one">
+                    🌌
+                </div>
+
+                <div class="galaxy-content">
+                    <h3>Milky Way</h3>
+                    <p>
+                        Our home galaxy containing our solar system
+                        and billions of stars.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="galaxy-card">
+
+                <div class="galaxy-image galaxy-two">
+                    🌀
+                </div>
+
+                <div class="galaxy-content">
+                    <h3>Andromeda</h3>
+                    <p>
+                        A nearby spiral galaxy that is one of the
+                        closest major galaxies to the Milky Way.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section id="gallery" class="gallery">
+
+        <div class="section-title">
+            <p>VISUAL UNIVERSE</p>
+            <h2>Space Gallery</h2>
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <span>🌌</span>
+                <h3>Deep Space</h3>
+            </div>
+
+            <div class="gallery-item">
+                <span>🌍</span>
+                <h3>Earth</h3>
+            </div>
+
+            <div class="gallery-item">
+                <span>🚀</span>
+                <h3>Rocket</h3>
+            </div>
+
+            <div class="gallery-item">
+                <span>🪐</span>
+                <h3>Saturn</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="contact">
+
+        <div class="section-title">
+            <p>GET IN TOUCH</p>
+            <h2>Contact ASTRONOVA</h2>
+        </div>
+
+        <form id="contactForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                id="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>🚀 ASTRONOVA</h2>
+
+            <p>
+                Explore. Discover. Imagine.
+            </p>
+
+            <p class="copyright">
+                © 2026 ASTRONOVA. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

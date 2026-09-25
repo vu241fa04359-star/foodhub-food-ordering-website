@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Smile — Book International Trips Online | Fast &amp; Affordable</title>
+<meta name="description" content="Travel Smile plans complete international trips for travellers from the USA and UK across 22 countries — flights, stays, transfers and a local host, all in one booking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Caveat:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2A4A;
+    --navy-2:#123A63;
+    --navy-3:#081D33;
+    --blue:#1E7FC2;
+    --sky:#7FCBF2;
+    --orange:#F2921C;
+    --orange-2:#FFB25A;
+    --ivory:#FFFDF7;
+    --paper-line:#CBBFA0;
+    --ink:#152331;
+    --muted:#5B6B7A;
+    --wave:#1AA6B7;
+    --green:#2E9E5B;
+    --red:#C74B3F;
+
+    --font-display:'Fraunces', serif;
+    --font-script:'Caveat', cursive;
+    --font-body:'Work Sans', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-body); color:var(--ink); background:var(--ivory); line-height:1.5; overflow-x:hidden;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer;}
+  input{font-family:inherit;}
+  .container{max-width:1220px; margin:0 auto; padding:0 32px;}
+  section{position:relative;}
+  h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; line-height:1.1; color:var(--navy);}
+  .eyebrow{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--orange); font-weight:600; display:flex; align-items:center; gap:10px; margin-bottom:14px;
+  }
+  .eyebrow::before{content:''; width:26px; height:1px; background:var(--orange);}
+  .eyebrow.center{justify-content:center;}
+  .eyebrow.center::before{display:none;}
+  .script{font-family:var(--font-script); font-weight:700;}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head.center{max-width:640px; margin:0 auto 44px; text-align:center;}
+  .section-head h2{font-size:clamp(28px,3.3vw,40px); margin-bottom:14px;}
+  .section-head p{color:var(--muted); font-size:16px;}
+
+  /* ===== NAV ===== */
+  header{position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 0; transition:.35s ease;}
+  header.scrolled{background:rgba(8,29,51,0.94); backdrop-filter:blur(10px); box-shadow:0 8px 30px rgba(8,29,51,0.25); padding:12px 0;}
+  nav{display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{height:50px; width:50px; object-fit:contain; border-radius:50%; background:#fff;}
+  .brand .name{font-family:var(--font-display); font-size:21px; font-weight:700; color:#fff;}
+  .brand .name span{color:var(--orange); font-family:var(--font-script); font-size:25px;}
+  .nav-links{display:flex; align-items:center; gap:30px;}
+  .nav-links a{color:#EAF2FA; font-size:14.5px; font-weight:500; position:relative; padding:6px 0;}
+  .nav-links a::after{content:''; position:absolute; bottom:0; left:0; right:100%; height:2px; background:var(--orange); transition:right .25s ease;}
+  .nav-links a:hover::after{right:0;}
+  .nav-right{display:flex; align-items:center; gap:16px;}
+  .login-btn{
+    display:flex; align-items:center; gap:7px; color:#fff; font-size:14px; font-weight:600;
+    border:1.5px solid rgba(255,255,255,.35); padding:9px 18px; border-radius:26px; transition:.2s ease;
+  }
+  .login-btn:hover{border-color:#fff; background:rgba(255,255,255,.08);}
+  .nav-cta{
+    background:var(--orange); color:var(--navy-3); font-weight:700; font-size:14px; padding:12px 22px;
+    border-radius:30px; border:none; box-shadow:0 8px 20px rgba(242,146,28,.35); transition:.2s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px); box-shadow:0 12px 26px rgba(242,146,28,.45);}
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:none;}
+  .burger span{width:26px; height:2px; background:#fff;}
+  .mobile-menu{display:none; position:fixed; inset:0; background:var(--navy-3); z-index:99; flex-direction:column; align-items:center; justify-content:center; gap:24px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:#fff; font-size:21px; font-family:var(--font-display);}
+  .mobile-close{position:absolute; top:26px; right:32px; background:none; border:none; color:#fff; font-size:28px;}
+
+  /* ===== HERO ===== */
+  .hero{min-height:92vh; background:radial-gradient(ellipse at 75% 15%, var(--navy-2) 0%, var(--navy) 45%, var(--navy-3) 100%); display:flex; align-items:center; padding:150px 0 80px; overflow:hidden;}
+  .hero-inner{position:relative; z-index:3; max-width:760px; margin:0 auto; text-align:center;}
+  .hero-globe-arc{position:absolute; top:-120px; right:-160px; width:640px; height:640px; border:1.5px solid rgba(127,203,242,0.3); border-radius:50%; z-index:1;}
+  .hero-globe-arc.two{width:820px; height:820px; top:-220px; right:-260px; border-color:rgba(242,146,28,0.2);}
+  .plane-path{position:absolute; top:10%; right:-2%; width:460px; z-index:2; opacity:.85;}
+  .plane-path svg{width:100%; height:auto;}
+  .fly-plane{animation:flyAcross 7s ease-in-out infinite; transform-origin:center;}
+  @keyframes flyAcross{0%{transform:translate(-18px,10px) rotate(-2deg);}50%{transform:translate(14px,-8px) rotate(2deg);}100%{transform:translate(-18px,10px) rotate(-2deg);}}
+  .hero h1{font-size:clamp(36px, 5.4vw, 68px); color:#fff; margin-bottom:20px;}
+  .hero h1 .accent{color:var(--orange); font-family:var(--font-script); font-weight:700; font-size:1.15em;}
+  .hero p.lead{color:#C9D8E6; font-size:17.5px; max-width:560px; margin:0 auto 40px;}
+
+  .search-bar{
+    background:var(--ivory); border-radius:60px; padding:8px 8px 8px 26px; display:flex; align-items:center; gap:12px;
+    box-shadow:0 24px 50px rgba(0,0,0,.35); max-width:560px; margin:0 auto;
+  }
+  .search-bar svg{flex-shrink:0; color:var(--muted);}
+  .search-bar input{flex:1; border:none; outline:none; font-size:15px; padding:12px 0; color:var(--ink); background:transparent;}
+  .search-bar button{background:var(--orange); color:var(--navy-3); border:none; padding:14px 24px; border-radius:50px; font-weight:700; font-size:14px; transition:.2s ease;}
+  .search-bar button:hover{background:var(--navy); color:#fff;}
+  .search-hint{color:#93A9BC; font-size:13px; margin-top:14px;}
+
+  /* ===== TRUST BAND ===== */
+  .trust-band{background:var(--ivory); padding:0;}
+  .trust-inner{
+    display:flex; align-items:center; gap:26px; background:#fff; border:1px solid #EDE6D6;
+    border-radius:20px; padding:30px 40px; box-shadow:0 20px 50px rgba(11,42,74,.1);
+    margin-top:-46px; position:relative; z-index:10; max-width:640px; margin-left:auto; margin-right:auto;
+  }
+  .trust-num{font-family:var(--font-display); font-size:42px; font-weight:700; color:var(--orange); flex-shrink:0;}
+  .trust-icon{width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg,var(--sky),var(--blue)); display:flex; align-items:center; justify-content:center; color:#fff; flex-shrink:0;}
+  .trust-text h4{font-size:17px; margin-bottom:2px;}
+  .trust-text p{font-size:13.5px; color:var(--muted);}
+
+  /* ===== FILTER TABS (shared) ===== */
+  .filter-tabs{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px;}
+  .filter-tab{background:transparent; border:1.5px solid #E1D9C4; color:var(--navy); padding:9px 19px; border-radius:24px; font-size:13.5px; font-weight:600; transition:.2s ease;}
+  .filter-tab.active, .filter-tab:hover{background:var(--orange); border-color:var(--orange); color:var(--navy-3);}
+  .filter-tab.on-dark{border-color:rgba(255,255,255,.25); color:#DDE9F2;}
+  .filter-tab.on-dark.active, .filter-tab.on-dark:hover{background:var(--orange); border-color:var(--orange); color:var(--navy-3);}
+
+  /* ===== DESTINATIONS ===== */
+  .destinations{padding:100px 0 110px; background:var(--navy-3); position:relative;}
+  .dest-head{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:8px; flex-wrap:wrap; gap:20px;}
+  .dest-head h2{color:#fff;}
+  .dest-head p{color:#9FB4C8; max-width:480px; font-size:15.5px;}
+  .see-more{color:var(--orange-2); font-weight:700; font-size:14px; display:flex; align-items:center; gap:6px; white-space:nowrap;}
+  .dest-scroll{display:flex; gap:22px; overflow-x:auto; padding-bottom:14px; scroll-snap-type:x proximity;}
+  .dest-scroll::-webkit-scrollbar{height:6px;}
+  .dest-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2); border-radius:10px;}
+  .dest-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:26px;}
+  .boarding-card{
+    display:flex; flex-direction:column; background:var(--ivory); border-radius:16px; overflow:hidden;
+    box-shadow:0 18px 40px rgba(0,0,0,.28); transition:transform .3s ease, box-shadow .3s ease;
+    scroll-snap-align:start;
+  }
+  .boarding-card:hover{transform:translateY(-6px) scale(1.01); box-shadow:0 26px 55px rgba(0,0,0,.35);}
+  .card-photo{position:relative; height:168px; overflow:hidden; flex-shrink:0; background:linear-gradient(180deg,#eef1f5,#dfe4ea);}
+  .card-photo img{width:100%; height:100%; object-fit:contain; object-position:center; display:block; transition:transform .5s ease; padding:14px; box-sizing:border-box;}
+  .boarding-card:hover .card-photo img{transform:scale(1.06);}
+  .card-photo::after{content:''; position:absolute; inset:0; pointer-events:none; box-shadow:inset 0 -40px 30px -30px rgba(8,29,51,.18);}
+  .card-stamp-badge{position:absolute; top:12px; right:12px; z-index:2; width:50px; height:50px; border-radius:50%; background:rgba(11,42,74,.88); border:2px dashed var(--orange-2); color:var(--orange-2); display:flex; align-items:center; justify-content:center; transform:rotate(-8deg);}
+  .card-stamp-badge svg{width:26px; height:26px;}
+  .card-code-tag{position:absolute; left:12px; bottom:10px; z-index:2; font-family:var(--font-mono); font-size:11.5px; color:#fff; font-weight:600; background:rgba(8,29,51,.5); padding:3px 9px; border-radius:12px;}
+  .card-flag{position:absolute; left:12px; top:12px; z-index:2; font-size:11px; font-family:var(--font-mono); font-weight:700; letter-spacing:.06em; padding:4px 10px; border-radius:12px; text-transform:uppercase;}
+  .card-flag.trending{background:var(--orange); color:var(--navy-3);}
+  .card-flag.evisa{background:var(--wave); color:#fff;}
+  .card-flag.cheapest{background:var(--green); color:#fff;}
+  .card-body{flex:1; padding:18px 18px 16px;}
+  .card-body .region-tag{font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--wave); font-weight:600;}
+  .card-body h3{font-size:21px; margin:6px 0 8px;}
+  .card-body p{font-size:13.5px; color:var(--muted); margin-bottom:12px;}
+  .card-tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;}
+  .card-tags span{font-size:10.5px; background:#F1EADA; color:var(--navy); padding:4px 10px; border-radius:20px; font-family:var(--font-mono);}
+  .card-footer{display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--paper-line); padding-top:12px;}
+  .card-footer .price{display:flex; flex-direction:column; line-height:1.3;}
+  .card-footer .price .usd{font-family:var(--font-display); font-weight:700; color:var(--orange); font-size:15.5px;}
+  .card-footer .price .inr{font-family:var(--font-mono); font-size:11px; color:var(--muted);}
+  .card-footer .book{font-size:12.5px; font-weight:700; color:var(--navy); display:flex; align-items:center; gap:4px; background:none; border:none; font-family:var(--font-body); padding:0;}
+
+  /* ===== WHY US ===== */
+  .values{padding:110px 0; background:var(--ivory);}
+  .values-inner{display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;}
+  .value-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .value-card{background:#fff; border:1px solid #EDE6D6; border-radius:16px; padding:26px 22px; transition:transform .25s ease, box-shadow .25s ease;}
+  .value-card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(11,42,74,.08);}
+  .value-card .icon{width:48px; height:48px; border-radius:13px; background:linear-gradient(135deg,var(--sky),var(--blue)); display:flex; align-items:center; justify-content:center; color:#fff; margin-bottom:16px;}
+  .value-card h3{font-size:17.5px; margin-bottom:8px;}
+  .value-card p{color:var(--muted); font-size:13.8px;}
+  .values-photo{border-radius:20px; overflow:hidden; box-shadow:0 30px 60px rgba(11,42,74,.15);}
+  .values-photo img{width:100%; height:100%; object-fit:cover; min-height:420px;}
+
+  /* ===== TOURS ===== */
+  .tours{padding:110px 0; background:linear-gradient(180deg,#fff, var(--ivory));}
+  .tour-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:26px;}
+  .tour-card{background:#fff; border:1px solid #EDE6D6; border-radius:18px; overflow:hidden; box-shadow:0 16px 34px rgba(11,42,74,.08); transition:transform .25s ease, box-shadow .25s ease; display:flex; flex-direction:column;}
+  .tour-card:hover{transform:translateY(-6px); box-shadow:0 26px 50px rgba(11,42,74,.14);}
+  .tour-photo{position:relative; height:180px;}
+  .tour-photo img{width:100%; height:100%; object-fit:cover;}
+  .tour-status{position:absolute; top:14px; left:14px; font-family:var(--font-mono); font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:5px 12px; border-radius:14px; color:#fff;}
+  .tour-status.open{background:var(--green);}
+  .tour-status.almost{background:var(--orange);}
+  .tour-status.closed{background:var(--red);}
+  .tour-group{position:absolute; top:14px; right:14px; background:rgba(8,29,51,.7); color:#fff; font-family:var(--font-mono); font-size:10px; padding:5px 11px; border-radius:14px; letter-spacing:.05em;}
+  .tour-body{padding:20px 22px 22px; flex:1; display:flex; flex-direction:column;}
+  .tour-duration{font-family:var(--font-mono); font-size:11.5px; color:var(--wave); font-weight:600; margin-bottom:8px; letter-spacing:.04em;}
+  .tour-body h3{font-size:19px; margin-bottom:6px;}
+  .tour-dates{font-size:12.5px; color:var(--muted); margin-bottom:10px; font-family:var(--font-mono);}
+  .tour-body p.desc{font-size:13.5px; color:var(--muted); margin-bottom:16px; flex:1;}
+  .tour-countries{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;}
+  .tour-countries span{font-size:10.5px; background:#F1EADA; color:var(--navy); padding:4px 10px; border-radius:20px; font-family:var(--font-mono);}
+  .tour-footer{display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--paper-line); padding-top:14px; margin-bottom:14px;}
+  .tour-actions{display:flex; gap:10px;}
+  .tour-actions button{flex:1; padding:11px; border-radius:26px; font-size:12.5px; font-weight:700; border:none; transition:.2s ease;}
+  .tour-actions .details{background:var(--ivory); color:var(--navy); border:1.5px solid #E1D9C4;}
+  .tour-actions .details:hover{border-color:var(--navy);}
+  .tour-actions .book{background:var(--navy); color:#fff;}
+  .tour-actions .book:hover{background:var(--orange); color:var(--navy-3);}
+
+  /* ===== FAQ ===== */
+  .faq{padding:110px 0; background:var(--navy-3);}
+  .faq-inner{display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; align-items:center;}
+  .faq-photo{border-radius:20px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,.4);}
+  .faq-photo img{width:100%; min-height:400px; object-fit:cover;}
+  .faq .section-head h2, .faq .eyebrow{color:#fff;}
+  .faq .eyebrow{color:var(--orange-2);}
+  .faq-item{border-bottom:1px solid rgba(255,255,255,.12); padding:20px 0;}
+  .faq-q{display:flex; justify-content:space-between; align-items:center; cursor:pointer; color:#fff; font-family:var(--font-display); font-size:17px; font-weight:600; gap:16px;}
+  .faq-q .plus{flex-shrink:0; width:26px; height:26px; border-radius:50%; border:1.5px solid rgba(255,255,255,.35); display:flex; align-items:center; justify-content:center; color:#fff; font-size:16px; transition:transform .25s ease;}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg); background:var(--orange); border-color:var(--orange);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .faq-item.open .faq-a{max-height:200px;}
+  .faq-a p{color:#AFC3D6; font-size:14.5px; padding-top:12px; max-width:520px;}
+
+  /* ===== BLOG ===== */
+  .blog{padding:110px 0; background:var(--ivory);}
+  .blog-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:24px;}
+  .blog-card{background:#fff; border:1px solid #EDE6D6; border-radius:16px; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease;}
+  .blog-card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(11,42,74,.1);}
+  .blog-photo{height:150px; overflow:hidden;}
+  .blog-photo img{width:100%; height:100%; object-fit:cover;}
+  .blog-body{padding:18px 20px 22px;}
+  .blog-tag{font-family:var(--font-mono); font-size:10.5px; color:var(--orange); font-weight:700; text-transform:uppercase; letter-spacing:.06em;}
+  .blog-meta{font-size:12px; color:var(--muted); margin:6px 0 10px; font-family:var(--font-mono);}
+  .blog-body h3{font-size:16.5px; line-height:1.3;}
+
+  /* ===== COUNTRIES WE SERVE ===== */
+  .countries-serve{padding:80px 0 110px; background:var(--ivory);}
+  .country-pills{display:flex; flex-wrap:wrap; gap:10px;}
+  .country-pill{background:#fff; border:1px solid #EDE6D6; color:var(--navy); font-size:13px; font-weight:600; padding:9px 18px; border-radius:20px; transition:.2s ease; background-color:#fff; border-width:1px; }
+  .country-pill:hover{background:var(--navy); color:#fff; border-color:var(--navy);}
+
+  /* ===== CTA BAND ===== */
+  .cta-band{padding:90px 0; background:var(--orange); display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;}
+  .cta-band h2{color:var(--navy-3); font-size:clamp(24px,3vw,36px); max-width:520px;}
+  .cta-band form{display:flex; flex-direction:column; gap:10px; align-items:stretch; width:270px; max-width:100%;}
+  .cta-band input{padding:16px 20px; border-radius:30px; border:none; font-size:15px; width:100%; max-width:100%;}
+  .cta-band button{background:var(--navy-3); color:#fff; border:none; padding:16px 28px; border-radius:30px; font-weight:700; font-size:14.5px; transition:.2s ease; width:100%;}
+  .cta-band button:hover{background:var(--navy);}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy-3); color:#B9C9D8; padding:70px 0 26px;}
+  .footer-top{display:grid; grid-template-columns:1.5fr .9fr .9fr .9fr; gap:40px; margin-bottom:44px;}
+  .footer-brand{display:flex; align-items:center; gap:12px; margin-bottom:16px;}
+  .footer-brand img{height:44px; width:44px; border-radius:50%; background:#fff;}
+  .footer-brand .name{font-family:var(--font-display); font-size:19px; color:#fff; font-weight:700;}
+  .footer-brand .name span{color:var(--orange); font-family:var(--font-script); font-size:23px;}
+  .footer-col h4{color:#fff; font-size:13px; margin-bottom:16px; letter-spacing:.05em; text-transform:uppercase; font-family:var(--font-mono); font-weight:600;}
+  .footer-col li{margin-bottom:10px; font-size:14px;}
+  .footer-col a:hover{color:var(--orange);}
+  .footer-contact{font-size:13.5px; margin-bottom:8px; display:flex; align-items:center; gap:8px;}
+  .footer-tag{font-size:12.5px; color:var(--wave); font-family:var(--font-mono); margin-top:10px;}
+  .footer-social{display:flex; gap:10px; margin-top:6px;}
+  .footer-social a{width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.2); display:flex; align-items:center; justify-content:center;}
+  .footer-social a:hover{background:var(--orange); border-color:var(--orange); color:var(--navy-3);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.12); padding-top:22px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12.5px; color:#7C90A2;}
+
+  /* ===== ROUTE MODAL ===== */
+  .modal-overlay{position:fixed; inset:0; background:rgba(8,29,51,0.72); backdrop-filter:blur(4px); display:none; align-items:center; justify-content:center; z-index:200; padding:24px;}
+  .modal-overlay.open{display:flex;}
+  .modal-card{background:var(--ivory); border-radius:20px; max-width:640px; width:100%; max-height:86vh; overflow-y:auto; position:relative; box-shadow:0 40px 90px rgba(0,0,0,.5); animation:modalIn .3s ease;}
+  @keyframes modalIn{from{opacity:0; transform:translateY(16px) scale(.98);} to{opacity:1; transform:none;}}
+  .modal-head{background:var(--navy); color:#fff; padding:30px 32px; border-radius:20px 20px 0 0; display:flex; align-items:center; gap:18px; position:relative; overflow:hidden;}
+  .modal-head .modal-watermark{position:absolute; right:-30px; top:50%; transform:translateY(-50%); width:170px; height:170px; opacity:.12; border-radius:50%; filter:grayscale(1) brightness(2);}
+  .modal-close{position:absolute; top:16px; right:18px; background:rgba(255,255,255,.12); border:none; color:#fff; width:34px; height:34px; border-radius:50%; font-size:20px; line-height:1; z-index:2;}
+  .modal-close:hover{background:var(--orange); color:var(--navy-3);}
+  .modal-logo{width:56px; height:56px; border-radius:50%; background:#fff; padding:4px; flex-shrink:0; z-index:1;}
+  .modal-head-text{z-index:1;}
+  .modal-head-text .region-tag{color:var(--orange-2);}
+  .modal-head-text h3{color:#fff; font-size:26px; margin-top:4px;}
+  .modal-body{padding:30px 32px 34px;}
+  .modal-body > p.desc{color:var(--muted); font-size:15px; margin-bottom:24px;}
+  .modal-section-label{font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--wave); font-weight:600; margin-bottom:14px;}
+  .route-list{display:flex; flex-direction:column; gap:14px; margin-bottom:26px;}
+  .route-item{border:1px solid #EDE6D6; border-radius:12px; padding:16px 18px; display:flex; justify-content:space-between; align-items:center; gap:14px; transition:.2s ease;}
+  .route-item:hover{border-color:var(--orange); background:#FFF7EA;}
+  .route-item .r-name{font-weight:700; color:var(--navy); font-size:15px; margin-bottom:4px;}
+  .route-item .r-desc{font-size:13px; color:var(--muted);}
+  .route-item .r-days{font-family:var(--font-mono); font-size:12.5px; background:var(--navy); color:#fff; padding:5px 12px; border-radius:20px; white-space:nowrap; flex-shrink:0;}
+  .modal-stamp-strip{display:flex; align-items:center; gap:14px; border-top:1px dashed var(--paper-line); padding-top:20px;}
+  .modal-stamp-strip img{width:44px; height:44px; border-radius:50%;}
+  .modal-stamp-strip .txt{font-size:12.5px; color:var(--muted); font-family:var(--font-mono);}
+  .modal-cta{margin-top:20px; width:100%; background:var(--orange); color:var(--navy-3); border:none; padding:15px; border-radius:30px; font-weight:700; font-size:14.5px;}
+  .modal-cta:hover{background:var(--navy); color:#fff;}
+
+  /* ===== VISA SECTION ===== */
+  .visa-section{padding:100px 0; background:#fff;}
+  .visa-disclaimer{
+    display:flex; gap:12px; align-items:flex-start; background:#FFF7EA; border:1px solid #F3DFB0;
+    border-radius:14px; padding:16px 20px; margin-bottom:36px; font-size:13.5px; color:#7A5A15;
+  }
+  .visa-disclaimer svg{flex-shrink:0; margin-top:2px; color:var(--orange);}
+  .visa-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px;}
+  .visa-card{background:var(--ivory); border:1px solid #EDE6D6; border-radius:16px; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease;}
+  .visa-card:hover{transform:translateY(-5px); box-shadow:0 20px 40px rgba(11,42,74,.1);}
+  .visa-card-top{display:flex; align-items:center; gap:12px; padding:16px 18px; border-bottom:1px dashed var(--paper-line);}
+  .visa-card-top img{width:44px; height:30px; object-fit:cover; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,.15); flex-shrink:0;}
+  .visa-card-top h4{font-size:16.5px; color:var(--navy);}
+  .visa-type-badge{font-family:var(--font-mono); font-size:10px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:4px 10px; border-radius:12px; margin-left:auto; white-space:nowrap;}
+  .visa-type-badge.free{background:#E4F5E9; color:var(--green);}
+  .visa-type-badge.evisa{background:#E4F2F6; color:var(--wave);}
+  .visa-type-badge.voa{background:#FDECD8; color:var(--orange);}
+  .visa-type-badge.eta{background:#EDE7F6; color:#7A5AC7;}
+  .visa-card-body{padding:16px 18px 18px;}
+  .visa-meta{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;}
+  .visa-meta div{font-size:11.5px; color:var(--muted);}
+  .visa-meta div b{display:block; color:var(--navy); font-size:13.5px; font-family:var(--font-display); font-weight:600;}
+  .visa-fee{display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--paper-line); padding-top:12px;}
+  .visa-fee .price{display:flex; flex-direction:column; line-height:1.3;}
+  .visa-fee .price .usd{font-family:var(--font-display); font-weight:700; color:var(--orange); font-size:15px;}
+  .visa-fee .price .inr{font-family:var(--font-mono); font-size:11px; color:var(--muted);}
+  .visa-fee button{background:var(--navy); color:#fff; border:none; padding:9px 16px; border-radius:20px; font-size:12.5px; font-weight:700;}
+  .visa-fee button:hover{background:var(--orange); color:var(--navy-3);}
+
+  /* ===== VISA MODAL ===== */
+  .visa-modal-head{background:var(--navy); color:#fff; padding:28px 32px; border-radius:20px 20px 0 0; display:flex; align-items:center; gap:16px; position:relative;}
+  .visa-modal-head img{width:56px; height:38px; object-fit:cover; border-radius:6px; box-shadow:0 4px 10px rgba(0,0,0,.3);}
+  .visa-modal-head h3{color:#fff; font-size:23px;}
+  .visa-modal-head .type{color:var(--orange-2); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.06em;}
+  .visa-detail-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-bottom:24px;}
+  .visa-detail-item{background:#fff; border:1px solid #EDE6D6; border-radius:12px; padding:14px 16px;}
+  .visa-detail-item .lbl{font-family:var(--font-mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--wave); font-weight:600; margin-bottom:4px;}
+  .visa-detail-item .val{font-family:var(--font-display); font-size:16.5px; font-weight:600; color:var(--navy);}
+  .visa-docs{list-style:none; margin-bottom:22px;}
+  .visa-docs li{display:flex; gap:10px; align-items:flex-start; font-size:14px; color:var(--ink); padding:8px 0; border-bottom:1px solid #F1EADA;}
+  .visa-docs li:last-child{border-bottom:none;}
+  .visa-docs li svg{flex-shrink:0; color:var(--green); margin-top:2px;}
+  .visa-modal-disclaimer{background:#FFF7EA; border:1px solid #F3DFB0; border-radius:10px; padding:12px 16px; font-size:12.5px; color:#7A5A15; margin-bottom:20px;}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 980px){
+    .values-inner, .faq-inner{grid-template-columns:1fr;}
+    .values-photo, .faq-photo{order:-1; max-height:280px;}
+    .values-photo img, .faq-photo img{min-height:0; height:280px;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+    .trust-inner{margin-left:20px; margin-right:20px;}
+  }
+  @media (max-width: 680px){
+    .nav-links, .nav-cta, .login-btn{display:none;}
+    .burger{display:flex;}
+    .value-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr;}
+    .container{padding:0 20px;}
+    .cta-band{flex-direction:column; align-items:flex-start;}
+    .search-bar{flex-wrap:wrap; border-radius:22px; padding:16px;}
+    .search-bar input{width:100%; order:2;}
+    .search-bar button{order:3; width:100%;}
+    .visa-detail-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){ .fly-plane{animation:none;} }
+  /* ===== TOAST ===== */
+  .toast{
+    position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--navy); color:#fff; padding:15px 26px; border-radius:30px; font-size:14px; font-weight:600;
+    box-shadow:0 20px 40px rgba(0,0,0,.3); z-index:400; opacity:0; pointer-events:none; transition:.3s ease;
+    display:flex; align-items:center; gap:10px; max-width:88vw;
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  .toast .dot{width:8px; height:8px; border-radius:50%; background:var(--orange); flex-shrink:0;}
+
+  /* ===== INFO MODAL (legal pages) ===== */
+  .info-overlay{position:fixed; inset:0; background:rgba(8,29,51,0.72); backdrop-filter:blur(4px); display:none; align-items:center; justify-content:center; z-index:210; padding:24px;}
+  .info-overlay.open{display:flex;}
+  .info-card{background:var(--ivory); border-radius:20px; max-width:520px; width:100%; max-height:80vh; overflow-y:auto; box-shadow:0 40px 90px rgba(0,0,0,.5); position:relative; animation:modalIn .3s ease;}
+  .info-head{background:var(--navy); color:#fff; padding:26px 30px; border-radius:20px 20px 0 0; position:relative;}
+  .info-head h3{color:#fff; font-size:22px;}
+  .info-close{position:absolute; top:16px; right:18px; background:rgba(255,255,255,.12); border:none; color:#fff; width:32px; height:32px; border-radius:50%; font-size:18px;}
+  .info-close:hover{background:var(--orange); color:var(--navy-3);}
+  .info-body{padding:26px 30px 30px; font-size:14.5px; color:var(--muted); line-height:1.7;}
+
+  /* ===== FOOTER SOCIAL (functional buttons) ===== */
+  .footer-social a{cursor:pointer;}
+
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <img src="logo.jpeg" alt="Travel Smile logo">
+        <div class="name">Travel <span>Smile</span></div>
+      </div>
+      <div class="nav-links">
+        <a href="#top">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#visa">Visa</a>
+        <a href="#tours">Tours</a>
+        <a href="#blog">Blog</a>
+        <a href="#faq">FAQ's</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="nav-right">
+        <button class="login-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Login
+        </button>
+        <button class="nav-cta" onclick="document.getElementById('destinations').scrollIntoView()">Plan My Trip</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&times;</button>
+  <a href="#top">Home</a>
+  <a href="#destinations">Destinations</a>
+  <a href="#visa">Visa</a>
+  <a href="#tours">Tours</a>
+  <a href="#blog">Blog</a>
+  <a href="#faq">FAQ's</a>
+  <a href="#contact">Contact Us</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero-globe-arc"></div>
+  <div class="hero-globe-arc two"></div>
+  <div class="plane-path">
+    <svg viewBox="0 0 400 260" class="fly-plane">
+      <path d="M20,220 Q160,20 380,60" stroke="#7FCBF2" stroke-width="2" stroke-dasharray="4 8" fill="none" opacity=".6"/>
+      <g transform="translate(340,45) rotate(18)">
+        <path d="M0 0 L34 6 L18 12 L34 20 L0 14 L-10 20 L-6 12 L-14 12 L-10 6 Z" fill="#F2921C"/>
+      </g>
+    </svg>
+  </div>
+  <div class="container hero-inner">
+    <div class="eyebrow center">Travel Smile Co. · USA &amp; UK Departures</div>
+    <h1>Book the Trip.<br>Skip the <span class="accent">Stress</span>.</h1>
+    <p class="lead">Whether it's Japan, Greece, or the Maldives — Travel Smile plans your whole international trip, flights to local host, fully online.</p>
+    <div class="search-bar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="heroSearch" placeholder="Search your dream destination — e.g. Japan, Greece, Maldives…">
+      <button id="heroSearchBtn">Search</button>
+    </div>
+    <p class="search-hint">Try: Norway, Thailand, Switzerland, India…</p>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAND ===================== -->
+<section class="trust-band">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-num">18k+</div>
+      <div class="trust-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="trust-text">
+        <h4>Trusted by Travellers</h4>
+        <p>18,000+ successful trips booked and counting, from the USA and UK to 22 countries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DESTINATIONS ===================== -->
+<section class="destinations" id="destinations">
+  <div class="container">
+    <div class="dest-head">
+      <div class="section-head" style="margin-bottom:0;">
+        <div class="eyebrow" style="color:var(--orange-2)">Trendy Travel Destinations</div>
+        <h2>Explore Our Most Popular Destinations, Tailored For Every Traveller</h2>
+        <p>Real routes we run today, organised the way a pilot reads a flight board. Prices in USD and INR (indicative).</p>
+      </div>
+    </div>
+
+    <div class="filter-tabs" id="regionTabs">
+      <button class="filter-tab on-dark active" data-region="all">All</button>
+      <button class="filter-tab on-dark" data-region="trending">Trending</button>
+      <button class="filter-tab on-dark" data-region="europe">Europe</button>
+      <button class="filter-tab on-dark" data-region="asia">Asia</button>
+      <button class="filter-tab on-dark" data-region="americas">Americas</button>
+      <button class="filter-tab on-dark" data-region="oceania">Oceania</button>
+    </div>
+
+    <div class="dest-grid" id="destGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== VISA ===================== -->
+<section class="visa-section" id="visa">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Visa Assistance</div>
+      <h2>Check Your Visa Requirements, Country by Country</h2>
+      <p>A quick reference for USA and UK passport holders — visa type, processing time, validity and fees, all in one place.</p>
+    </div>
+
+    <div class="visa-disclaimer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      <div>Visa types, fees and processing times below are indicative and can change without notice. Always confirm current requirements with the relevant embassy, consulate, or official government portal before booking travel — our team can help you double-check as part of your booking.</div>
+    </div>
+
+    <div class="filter-tabs" id="visaTabs">
+      <button class="filter-tab active" data-vtype="all">All</button>
+      <button class="filter-tab" data-vtype="free">Visa-Free</button>
+      <button class="filter-tab" data-vtype="evisa">e-Visa</button>
+      <button class="filter-tab" data-vtype="voa">Visa on Arrival</button>
+      <button class="filter-tab" data-vtype="eta">ETA / Authorization</button>
+    </div>
+
+    <div class="visa-grid" id="visaGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== WHY US ===================== -->
+<section class="values">
+  <div class="container values-inner">
+    <div>
+      <div class="eyebrow">Why Go With Travel Smile</div>
+      <h2 style="font-size:clamp(28px,3.3vw,38px); margin-bottom:20px;">Hassle-Free, Unforgettable Trips With Expert Guidance</h2>
+      <p style="color:var(--muted); margin-bottom:28px;">We handle every detail of your trip, so the only thing you plan is what to pack.</p>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-4.5-7-8.2-7-12a7 7 0 0 1 14 0c0 3.8-3 7.5-7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
+          <h3>Expert Planning</h3>
+          <p>Our route planners know exactly what to book and when, so nothing gets lost between flights and transfers.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>Best Price Guarantee</h3>
+          <p>Transparent pricing in USD and INR, no hidden charges, full value on every booking.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>24/7 Support</h3>
+          <p>Questions at midnight, mid-layover, or mid-adventure — our team is always reachable.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.6L22 9.3l-5 4.8L18.2 22 12 18.3 5.8 22 7 14.1l-5-4.8 7.1-1.1z"/></svg></div>
+          <h3>Curated Itineraries</h3>
+          <p>Every route is built around what you actually want to see — city, coast, mountain, or all three.</p>
+        </div>
+      </div>
+    </div>
+    <div class="values-photo">
+      <img src="https://loremflickr.com/700/860/traveler,suitcase,airport" alt="Traveller with suitcase at the airport">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TOURS ===================== -->
+<section class="tours" id="tours">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Multi-Country Tour Packages</div>
+      <h2>Group Tours That Do the Planning For You</h2>
+      <p>All-inclusive routes across multiple countries — flights, stays, meals and transfers bundled into one price.</p>
+    </div>
+    <div class="filter-tabs" id="tourTabs">
+      <button class="filter-tab active" data-tregion="all">All</button>
+      <button class="filter-tab" data-tregion="europe">Europe</button>
+      <button class="filter-tab" data-tregion="asia">Asia</button>
+      <button class="filter-tab" data-tregion="americas">Americas</button>
+      <button class="filter-tab" data-tregion="oceania">Oceania</button>
+    </div>
+    <div class="tour-grid" id="tourGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" id="faq">
+  <div class="container faq-inner">
+    <div class="faq-photo">
+      <img src="https://loremflickr.com/640/760/passport,stamps,travel" alt="Passport with travel stamps">
+    </div>
+    <div>
+      <div class="eyebrow">Frequently Asked Questions</div>
+      <h2 style="font-size:clamp(26px,3vw,36px); margin-bottom:24px;">Common Questions About Travel Smile</h2>
+      <div id="faqList">
+        <div class="faq-item open">
+          <div class="faq-q"><span>What does Travel Smile do?</span><span class="plus">+</span></div>
+          <div class="faq-a"><p>We plan and book complete international trips — flights, stays, transfers and a local host — for travellers heading out from the USA and UK.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Who can book with Travel Smile?</span><span class="plus">+</span></div>
+          <div class="faq-a"><p>Anyone travelling from the USA or UK — solo travellers, couples, families and groups are all welcome.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>How can I pay?</span><span class="plus">+</span></div>
+          <div class="faq-a"><p>Payments are processed securely by card or bank transfer, in either USD or INR.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>How do I get my itinerary and tickets?</span><span class="plus">+</span></div>
+          <div class="faq-a"><p>Everything lands in your Travel Smile account and inbox, usually confirmed within 48 hours of booking.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BLOG ===================== -->
+<section class="blog" id="blog">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Travel Tips &amp; Stories</div>
+      <h2>Travel Tips, Route Guides &amp; Stories From Around the World</h2>
+    </div>
+    <div class="blog-grid" id="blogGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== COUNTRIES WE SERVE ===================== -->
+<section class="countries-serve">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Countries We Serve</div>
+      <h2 style="font-size:26px;">Tap a Country to See Its Routes</h2>
+    </div>
+    <div class="country-pills" id="countryPills"></div>
+  </div>
+</section>
+
+<!-- ===================== CTA / NEWSLETTER ===================== -->
+<section class="cta-band" id="contact">
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;">
+    <h2>Get the window seat. We'll send route ideas, fare drops, and new stamps to your inbox.</h2>
+    <form id="newsletterForm">
+      <input type="email" id="newsletterEmail" placeholder="you@email.com" required>
+      <button type="submit">Send Me Ideas</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== ROUTE MODAL ===================== -->
+<div class="modal-overlay" id="routeModal">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal-head">
+      <img src="logo.jpeg" alt="" class="modal-watermark">
+      <img src="logo.jpeg" alt="Travel Smile logo" class="modal-logo">
+      <div class="modal-head-text">
+        <div class="region-tag" id="modalRegion">Europe</div>
+        <h3 id="modalTitle">Destination</h3>
+      </div>
+    </div>
+    <div class="modal-body">
+      <p class="desc" id="modalDesc"></p>
+      <div class="modal-section-label">Available Routes</div>
+      <div class="route-list" id="modalRoutes"></div>
+      <div class="modal-stamp-strip">
+        <img src="logo.jpeg" alt="Travel Smile logo">
+        <div class="txt">Every route includes flights, stays &amp; a local Travel Smile host — stamped and confirmed within 48 hours.</div>
+      </div>
+      <button class="modal-cta" id="modalCta">Enquire About This Trip</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="visaModal">
+  <div class="modal-card">
+    <button class="modal-close" id="visaModalClose" aria-label="Close">&times;</button>
+    <div class="visa-modal-head">
+      <img id="visaModalFlag" src="" alt="">
+      <div>
+        <div class="type" id="visaModalType">e-Visa</div>
+        <h3 id="visaModalTitle">Destination</h3>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="visa-modal-disclaimer">Indicative only — confirm final requirements with the official embassy or government visa portal before applying.</div>
+      <div class="visa-detail-grid" id="visaDetailGrid"></div>
+      <div class="modal-section-label">Documents Typically Required</div>
+      <ul class="visa-docs" id="visaDocsList"></ul>
+      <button class="modal-cta" id="visaModalCta">Get Help With This Visa</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="logo.jpeg" alt="Travel Smile logo">
+          <div class="name">Travel <span>Smile</span></div>
+        </div>
+        <p style="max-width:280px; font-size:14px; margin-bottom:14px;">Travel Smile plans international trips for travellers from the USA and UK — flights to local host, fully online, no office visits needed.</p>
+        <div class="footer-contact">📞 +1 (800) 555-0192 · +44 20 7946 0192</div>
+        <div class="footer-contact">✉️ hello@travelsmile.co</div>
+        <div class="footer-tag">Serving travellers from the USA &amp; UK, 100% online</div>
+        <div class="footer-social">
+          <a href="https://instagram.com/travelsmileco" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://facebook.com/travelsmileco" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://x.com/travelsmileco" target="_blank" rel="noopener" aria-label="X / Twitter">X</a>
+          <a href="https://linkedin.com/company/travelsmileco" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#top">› Home</a></li>
+          <li><a href="#destinations">› Destinations</a></li>
+          <li><a href="#visa">› Visa</a></li>
+          <li><a href="#tours">› Tours</a></li>
+          <li><a href="#faq">› FAQ's</a></li>
+          <li><a href="#blog">› Blog</a></li>
+          <li><a href="#contact">› Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Other Links</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="openInfoModal('privacy')">› Privacy Policy</a></li>
+          <li><a href="javascript:void(0)" onclick="openInfoModal('terms')">› Terms &amp; Conditions</a></li>
+          <li><a href="javascript:void(0)" onclick="openInfoModal('cancellation')">› Cancellation Policy</a></li>
+          <li><a href="javascript:void(0)" onclick="openInfoModal('cookies')">› Cookies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Regions</h4>
+        <ul>
+          <li><a href="#destinations" onclick="setRegion('europe')">› Europe</a></li>
+          <li><a href="#destinations" onclick="setRegion('asia')">› Asia</a></li>
+          <li><a href="#destinations" onclick="setRegion('americas')">› Americas</a></li>
+          <li><a href="#destinations" onclick="setRegion('oceania')">› Oceania</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Travel Smile Co. All rights reserved.</span>
+      <span>Explore More, Smile Always.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"><span class="dot"></span><span id="toastMsg"></span></div>
+
+<div class="info-overlay" id="infoOverlay">
+  <div class="info-card">
+    <div class="info-head">
+      <button class="info-close" id="infoClose" aria-label="Close">&times;</button>
+      <h3 id="infoTitle">Title</h3>
+    </div>
+    <div class="info-body" id="infoBody"></div>
+  </div>
+</div>
+
+<script>
+/* ---------- Header scroll state ---------- */
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+
+/* ---------- Mobile menu ---------- */
+const burger = document.getElementById('burgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+document.getElementById('mobileClose').addEventListener('click', () => mobileMenu.classList.remove('open'));
+burger.addEventListener('click', () => mobileMenu.classList.add('open'));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+/* ---------- Icons ---------- */
+const ICONS = {
+  usa: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8v8M25 12l7-4 7 4M20 20h24M22 20l-4 26h28l-4-26M26 46v-14M32 46v-14M38 46v-14"/></svg>`,
+  uk: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="18" width="20" height="30" rx="1"/><rect x="26" y="24" width="12" height="9"/><path d="M32 18V10l6 4-6 4"/><path d="M20 48h24"/></svg>`,
+  greece: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 26 32 12l18 14"/><path d="M16 48V26M22 48V26M28 48V26M36 48V26M42 48V26M48 48V26"/><path d="M12 48h40"/></svg>`,
+  italy: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M10 44a22 8 0 0 1 44 0"/><path d="M16 44V30M24 44V30M32 44V30M40 44V30M48 44V30"/><path d="M8 44h48"/></svg>`,
+  france: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8l-6 34h12L32 8z"/><path d="M23 24h18M20 34h24M26 14h12"/><path d="M32 42v6"/><path d="M18 48h28"/></svg>`,
+  faroe: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40l10-18 8 10 8-14 8 12 6-8 8 18"/><path d="M40 26v22"/><path d="M8 44h48"/></svg>`,
+  nz: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 10c6 8 6 16 3 22 5-2 10-1 13 3-6 2-10 6-11 11-3-5-8-7-13-6 3-5 3-11 0-16-4 3-9 3-13 0 4-4 5-9 3-14 6 1 12-1 18 0z"/></svg>`,
+  portugal: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="24" width="32" height="16" rx="2"/><circle cx="22" cy="42" r="3"/><circle cx="42" cy="42" r="3"/><path d="M24 24v-6h16v6M32 12v6"/></svg>`,
+  japan: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 44 30 16l16 28"/><path d="M14 34h10M14 26h6M12 48h40"/><path d="M40 30v18M46 30v18M40 34h6M40 42h6"/></svg>`,
+  laos: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8v6M26 20h12l4 8H22l4-8zM20 28h24l4 8H16l4-8zM14 36h36l4 10H10l4-10z"/></svg>`,
+  brazil: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 10v22M32 18l-12 -6M32 18l12 -6M22 30h20"/><path d="M16 46c6-8 26-8 32 0"/><circle cx="32" cy="34" r="3"/></svg>`,
+  croatia: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30h6v-6h6v6h6v-6h6v6h6v-6h6v6h6"/><path d="M10 30v14h44V30"/><path d="M8 48c8-6 16-6 24 0s16 6 24 0"/></svg>`,
+  canada: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 10l3 8 7-4-2 8 8 1-6 6 5 6-8 1 1 8-8-5-8 5 1-8-8-1 5-6-6-6 8-1-2-8 7 4z"/></svg>`,
+  maldives: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 40h14v-8h-14z"/><path d="M18 32V20M18 20c4 0 4 4 8 4M18 20c-4 0-6 3-9 2"/><path d="M8 46c14-6 34-6 48 0"/><path d="M40 40v-6h10v6"/></svg>`,
+  switzerland: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 46 26 12l8 14 6-8 14 28z"/><path d="M22 30l4 4 4-6"/><path d="M8 46h48"/></svg>`,
+  turkey: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12c0 10 24 10 24 0-2 14-22 14-24 0z"/><path d="M32 26v14"/><rect x="24" y="40" width="16" height="8"/><path d="M10 48h44"/></svg>`,
+  sweden: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 30c-6-4-10-4-14 0M40 30c6-4 10-4 14 0"/><path d="M32 30v-6M26 24c2-4 4-4 6 0 2-4 4-4 6 0"/><path d="M20 44l6-14M44 44l-6-14"/></svg>`,
+  netherlands: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="20" r="4"/><path d="M32 20 18 12M32 20 46 12M32 20 20 32M32 20 44 32"/><path d="M26 24h12l3 22h-18z"/></svg>`,
+  norway: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 22 16l10 12 8-10 16 16"/><path d="M8 40 22 22l10 12 8-10 16 16" opacity=".45"/><path d="M8 44h48"/></svg>`,
+  indonesia: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 46V20c6 0 6 6 6 10s0 10-6 16z"/><path d="M44 46V20c-6 0-6 6-6 10s0 10 6 16z"/><path d="M12 46h40"/></svg>`,
+  thailand: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8v4M28 16h8l-2 6h-4zM24 22h16l-2 6H26zM20 28h24l-3 8H23zM16 36h32l-3 10H19z"/></svg>`,
+  india: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 30c0-8 16-8 16 0z"/><path d="M32 20v-6"/><rect x="22" y="30" width="20" height="16"/><path d="M14 46V34c3 0 3 6 0 12M50 46V34c-3 0-3 6 0 12"/><path d="M10 48h44"/></svg>`
+};
+const CODES = {
+  "United States":"USA","United Kingdom":"UK","Greece":"GRC","Italy":"ITA","France":"FRA",
+  "Faroe Islands":"FRO","New Zealand":"NZL","Portugal":"PRT","Japan":"JPN","Laos":"LAO",
+  "Brazil":"BRA","Croatia":"HRV","Canada":"CAN","The Maldives":"MDV","Switzerland":"CHE",
+  "Turkey":"TUR","Sweden":"SWE","Netherlands":"NLD","Norway":"NOR","Indonesia":"IDN",
+  "Thailand":"THA","India":"IND"
+};
+
+/* ---------- Destinations data ---------- */
+const DESTINATIONS = [
+  {c:"United States", code:"usa", iso:"us", region:"americas", tag:"Home Base", flag:"", title:"United States", blurb:"Coast-to-coast road trips, National Park loops and city-break weekends built for a fast getaway.", tags:["Road Trips","National Parks"], usd:890, photo:"grand-canyon,usa"},
+  {c:"Canada", code:"canada", iso:"ca", region:"americas", tag:"Americas", flag:"cheapest", title:"Canada", blurb:"Rockies, maple-lined highways and lakeside cabins for a slower kind of adventure.", tags:["Rockies","Lakes"], usd:1190, photo:"banff,canada"},
+  {c:"Brazil", code:"brazil", iso:"br", region:"americas", tag:"Americas", flag:"", title:"Brazil", blurb:"Rio's coastline, Amazon lodges and carnival energy, paced for first-timers.", tags:["Rio","Amazon"], usd:1340, photo:"rio-de-janeiro,brazil"},
+
+  {c:"United Kingdom", code:"uk", iso:"gb", region:"europe", tag:"Home Base", flag:"", title:"United Kingdom", blurb:"Countryside rail loops, castle stays and London long-weekends.", tags:["Castles","City Breaks"], usd:790, photo:"london,england"},
+  {c:"Greece", code:"greece", iso:"gr", region:"europe", tag:"Europe", flag:"trending", title:"Greece", blurb:"Island-hopping the Cyclades with ferries timed so you never waste a sunset.", tags:["Islands","Ruins"], usd:1450, photo:"santorini,greece"},
+  {c:"Italy", code:"italy", iso:"it", region:"europe", tag:"Europe", flag:"trending", title:"Italy", blurb:"Rome to the Amalfi Coast, with the pasta stops nobody puts on a map.", tags:["Coast","Cuisine"], usd:1520, photo:"amalfi-coast,italy"},
+  {c:"France", code:"france", iso:"fr", region:"europe", tag:"Europe", flag:"trending", title:"France", blurb:"Paris icons, Loire chateaux and Provence lavender fields on one easy rail pass.", tags:["Paris","Chateaux"], usd:1380, photo:"eiffel-tower,paris"},
+  {c:"Faroe Islands", code:"faroe", iso:"fo", region:"europe", tag:"Europe", flag:"", title:"Faroe Islands", blurb:"Dramatic cliffs, waterfalls into the sea, and villages of 40 people.", tags:["Cliffs","Hiking"], usd:1690, photo:"faroe-islands,cliffs"},
+  {c:"Portugal", code:"portugal", iso:"pt", region:"europe", tag:"Europe", flag:"cheapest", title:"Portugal", blurb:"Lisbon trams, Porto wine cellars and the Algarve coastline.", tags:["Lisbon","Wine"], usd:1190, photo:"lisbon,portugal"},
+  {c:"Croatia", code:"croatia", iso:"hr", region:"europe", tag:"Europe", flag:"evisa", title:"Croatia", blurb:"Dubrovnik's walls, island-hopping the Adriatic, and konoba dinners at sunset.", tags:["Adriatic","Old Town"], usd:1270, photo:"dubrovnik,croatia"},
+  {c:"Switzerland", code:"switzerland", iso:"ch", region:"europe", tag:"Europe", flag:"", title:"Switzerland", blurb:"Alpine trains, Matterhorn views and lakeside towns built for slow mornings.", tags:["Alps","Trains"], usd:1890, photo:"matterhorn,switzerland"},
+  {c:"Turkey", code:"turkey", iso:"tr", region:"europe", tag:"Europe", flag:"evisa", title:"Turkey", blurb:"Istanbul bazaars, Cappadocia balloon rides and the Aegean coast.", tags:["Balloons","Bazaars"], usd:1240, photo:"cappadocia,turkey"},
+  {c:"Sweden", code:"sweden", iso:"se", region:"europe", tag:"Europe", flag:"", title:"Sweden", blurb:"Stockholm archipelago, northern lights chasing, and forest cabin stays.", tags:["Archipelago","Aurora"], usd:1560, photo:"stockholm,sweden"},
+  {c:"Netherlands", code:"netherlands", iso:"nl", region:"europe", tag:"Europe", flag:"", title:"Netherlands", blurb:"Amsterdam canals, tulip fields in bloom, and windmill villages by bike.", tags:["Canals","Tulips"], usd:1150, photo:"amsterdam,windmill"},
+  {c:"Norway", code:"norway", iso:"no", region:"europe", tag:"Europe", flag:"", title:"Norway", blurb:"Fjord cruises, midnight sun hikes, and coastal villages the size of a postcard.", tags:["Fjords","Midnight Sun"], usd:1780, photo:"norway,fjord"},
+
+  {c:"Japan", code:"japan", iso:"jp", region:"asia", tag:"Asia", flag:"trending", title:"Japan", blurb:"Bullet trains between Tokyo neon and Kyoto temples, timed to cherry blossom or autumn colour.", tags:["Bullet Train","Temples"], usd:2050, photo:"kyoto,japan"},
+  {c:"Laos", code:"laos", iso:"la", region:"asia", tag:"Asia", flag:"cheapest", title:"Laos", blurb:"Slow boats on the Mekong, saffron-robed monks at dawn, and Luang Prabang mornings.", tags:["Mekong","Temples"], usd:1320, photo:"luang-prabang,laos"},
+  {c:"The Maldives", code:"maldives", iso:"mv", region:"asia", tag:"Asia", flag:"trending", title:"The Maldives", blurb:"Overwater villas, house reefs, and a boat transfer that's part of the holiday.", tags:["Overwater","Reef"], usd:2390, photo:"maldives,overwater-bungalow"},
+  {c:"Indonesia", code:"indonesia", iso:"id", region:"asia", tag:"Asia", flag:"evisa", title:"Indonesia", blurb:"Bali rice terraces, temple gates at dawn, and Gili island boat-hops.", tags:["Bali","Temples"], usd:1410, photo:"bali,indonesia"},
+  {c:"Thailand", code:"thailand", iso:"th", region:"asia", tag:"Asia", flag:"cheapest", title:"Thailand", blurb:"Bangkok street food crawls, jungle lodges, and southern islands by longtail boat.", tags:["Street Food","Islands"], usd:1280, photo:"phuket,thailand"},
+  {c:"India", code:"india", iso:"in", region:"asia", tag:"Asia", flag:"", title:"India", blurb:"Kerala backwaters, Rajasthan forts, and the Taj Mahal at first light — with a local host the whole way.", tags:["Backwaters","Forts"], usd:1340, photo:"taj-mahal,india"},
+
+  {c:"New Zealand", code:"nz", iso:"nz", region:"oceania", tag:"Oceania", flag:"trending", title:"New Zealand", blurb:"South Island fjords, glacier hikes, and campervan routes with no fixed schedule.", tags:["Fjords","Campervan"], usd:2190, photo:"queenstown,new-zealand"},
+];
+
+const USD_TO_INR = 87;
+function formatPrice(usd){
+  const inr = Math.round(usd * USD_TO_INR / 10) * 10;
+  return `<span class="usd">$${usd.toLocaleString('en-US')}</span><span class="inr">₹${inr.toLocaleString('en-IN')}</span>`;
+}
+function buildRoutes(d){
+  const t1 = d.tags[0] || "Highlights";
+  const t2 = d.tags[1] || "Local Life";
+  return [
+    {name:`${d.title} Highlights`, days:"7 Days", desc:`A fast-paced first look at ${d.title} — the icons, the ${t1.toLowerCase()}, and enough downtime to actually enjoy it.`},
+    {name:`${d.title} Explorer`, days:"10 Days", desc:`A slower loop through ${d.title} that trades one big city day for ${t2.toLowerCase()} and time with a local host.`},
+    {name:`Grand ${d.title} Tour`, days:"14 Days", desc:`The full route across ${d.title} — every region we recommend, paced so nothing feels rushed.`},
+  ];
+}
+
+/* ---------- Visa data (indicative — see on-page disclaimer) ---------- */
+const VISAS = [
+  {iso:"gr", title:"Greece", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"180 Days", stay:"90 Days", entries:"Multiple", usd:0, docs:["Valid passport (6+ months)","Proof of onward travel","Proof of accommodation","Sufficient funds for stay"], note:"Short tourist stays are visa-free for USA & UK passport holders under the Schengen agreement. An ETIAS travel authorization is expected to apply from late 2026."},
+  {iso:"it", title:"Italy", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"180 Days", stay:"90 Days", entries:"Multiple", usd:0, docs:["Valid passport (6+ months)","Proof of onward travel","Proof of accommodation","Sufficient funds for stay"], note:"Visa-free for short tourist stays under the Schengen agreement. ETIAS authorization expected from late 2026."},
+  {iso:"fr", title:"France", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"180 Days", stay:"90 Days", entries:"Multiple", usd:0, docs:["Valid passport (6+ months)","Proof of onward travel","Proof of accommodation","Sufficient funds for stay"], note:"Visa-free for short tourist stays under the Schengen agreement. ETIAS authorization expected from late 2026."},
+  {iso:"fo", title:"Faroe Islands", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"180 Days", stay:"90 Days", entries:"Multiple", usd:0, docs:["Valid passport","Proof of onward travel","Proof of accommodation"], note:"Visa-free for short tourist stays for USA & UK passport holders. The Faroe Islands sit outside the Schengen area, so entry rules are set by Denmark separately."},
+  {iso:"pt", title:"Portugal", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"180 Days", stay:"90 Days", entries:"Multiple", usd:0, docs:["Valid passport (6+ months)","Proof of onward travel","Proof of accommodation","Sufficient funds for stay"], note:"Visa-free for short tourist stays under the Schengen agreement. ETIAS authorization expected from late 2026."},
+  {iso:"hr", title:"Croatia", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"180 Days", stay:"90 Days", entries:"Multiple", usd:0, docs:["Valid passport (6+ months)","Proof of onward travel","Proof of accommodation"], note:"Croatia joined the Schengen area in 2023. Visa-free for short tourist stays for USA & UK passport holders."},
+  {iso:"ch", title:"Switzerland", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"180 Days", stay:"90 Days", entries:"Multiple", usd:0, docs:["Valid passport (6+ months)","Proof of onward travel","Proof of accommodation","Sufficient funds for stay"], note:"Switzerland is part of the Schengen area. Visa-free for short tourist stays; ETIAS authorization expected from late 2026."},
+  {iso:"tr", title:"Turkey", type:"evisa", typeLabel:"e-Visa", processing:"24–48 Hours", validity:"180 Days", stay:"90 Days", entries:"Multiple", usd:55, docs:["Valid passport (6+ months)","Passport-style photo","Return flight itinerary","Proof of accommodation","Debit/credit card for online fee"], note:"USA & UK passport holders apply online through Turkey's official e-Visa portal before departure."},
+  {iso:"se", title:"Sweden", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"180 Days", stay:"90 Days", entries:"Multiple", usd:0, docs:["Valid passport (6+ months)","Proof of onward travel","Proof of accommodation"], note:"Visa-free for short tourist stays under the Schengen agreement. ETIAS authorization expected from late 2026."},
+  {iso:"nl", title:"Netherlands", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"180 Days", stay:"90 Days", entries:"Multiple", usd:0, docs:["Valid passport (6+ months)","Proof of onward travel","Proof of accommodation"], note:"Visa-free for short tourist stays under the Schengen agreement. ETIAS authorization expected from late 2026."},
+  {iso:"no", title:"Norway", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"180 Days", stay:"90 Days", entries:"Multiple", usd:0, docs:["Valid passport (6+ months)","Proof of onward travel","Proof of accommodation"], note:"Visa-free for short tourist stays under the Schengen agreement. ETIAS authorization expected from late 2026."},
+  {iso:"jp", title:"Japan", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"90 Days", stay:"90 Days", entries:"Single", usd:0, docs:["Valid passport","Return flight itinerary","Proof of accommodation"], note:"Visa-free for short tourist stays for USA & UK passport holders."},
+  {iso:"la", title:"Laos", type:"evisa", typeLabel:"e-Visa", processing:"3 Business Days", validity:"60 Days", stay:"30 Days", entries:"Single", usd:40, docs:["Valid passport (6+ months)","Passport-style photo","Confirmed accommodation","Online application form"], note:"e-Visa can be applied for online before arrival, or a visa on arrival is available at major entry points."},
+  {iso:"mv", title:"The Maldives", type:"voa", typeLabel:"Visa on Arrival", processing:"On Arrival", validity:"30 Days", stay:"30 Days", entries:"Single", usd:0, docs:["Valid passport (6+ months)","Return/onward flight ticket","Proof of pre-booked accommodation","Sufficient funds for stay"], note:"Free visa on arrival for tourists from most countries including the USA and UK, granted at immigration."},
+  {iso:"id", title:"Indonesia", type:"voa", typeLabel:"Visa on Arrival", processing:"On Arrival", validity:"60 Days", stay:"30 Days", entries:"Single", usd:35, docs:["Valid passport (6+ months)","Return/onward flight ticket","Online VoA payment confirmation"], note:"Paid visa on arrival available for USA & UK travellers, extendable once for an additional 30 days locally."},
+  {iso:"th", title:"Thailand", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"60 Days", stay:"60 Days", entries:"Single", usd:0, docs:["Valid passport (6+ months)","Return/onward flight ticket","Proof of accommodation"], note:"Visa exemption currently allows tourist stays of up to 60 days for USA & UK passport holders."},
+  {iso:"in", title:"India", type:"evisa", typeLabel:"e-Visa", processing:"3–5 Business Days", validity:"1 Year", stay:"90 Days per visit", entries:"Multiple", usd:25, docs:["Valid passport (6+ months)","Digital passport photo","Return flight itinerary","Online application form"], note:"e-Visa applications are submitted online through India's official e-Visa portal before departure."},
+  {iso:"br", title:"Brazil", type:"free", typeLabel:"Visa-Free", processing:"N/A", validity:"90 Days", stay:"90 Days", entries:"Multiple", usd:0, docs:["Valid passport (6+ months)","Return/onward flight ticket"], note:"Visa-free for short tourist stays for USA & UK passport holders."},
+  {iso:"ca", title:"Canada", type:"eta", typeLabel:"ETA / Authorization", processing:"Minutes – 72 Hours", validity:"5 Years", stay:"6 Months per visit", entries:"Multiple", usd:7, docs:["Valid passport","Email address for approval","Debit/credit card for online fee"], note:"UK passport holders need an eTA to fly into Canada. US citizens generally don't need a visa or eTA when travelling with a US passport."},
+  {iso:"nz", title:"New Zealand", type:"eta", typeLabel:"ETA / Authorization", processing:"Minutes – 72 Hours", validity:"2 Years", stay:"90 Days per visit", entries:"Multiple", usd:12, docs:["Valid passport","Email address for approval","Debit/credit card for online fee"], note:"USA & UK passport holders need an NZeTA (New Zealand Electronic Travel Authority) before flying in, plus an International Visitor Levy."},
+];
+const VISA_TYPE_LABELS = {free:"Visa-Free", evisa:"e-Visa", voa:"Visa on Arrival", eta:"ETA / Authorization"};
+const visaGrid = document.getElementById('visaGrid');
+function renderVisas(type){
+  visaGrid.innerHTML = '';
+  const items = type === 'all' ? VISAS : VISAS.filter(v => v.type === type);
+  items.forEach(v => {
+    const card = document.createElement('div');
+    card.className = 'visa-card';
+    const inr = Math.round(v.usd * USD_TO_INR / 10) * 10;
+    card.innerHTML = `
+      <div class="visa-card-top">
+        <img src="https://flagcdn.com/w80/${v.iso}.jpg" alt="Flag of ${v.title}">
+        <h4>${v.title}</h4>
+        <span class="visa-type-badge ${v.type}">${v.typeLabel}</span>
+      </div>
+      <div class="visa-card-body">
+        <div class="visa-meta">
+          <div>Processing<b>${v.processing}</b></div>
+          <div>Stay Duration<b>${v.stay}</b></div>
+        </div>
+        <div class="visa-fee">
+          <span class="price">
+            <span class="usd">${v.usd === 0 ? 'Free' : '$'+v.usd.toLocaleString('en-US')}</span>
+            <span class="inr">${v.usd === 0 ? 'No visa fee' : '≈ ₹'+inr.toLocaleString('en-IN')}</span>
+          </span>
+          <button type="button" data-iso="${v.iso}">View Details</button>
+        </div>
+      </div>
+    `;
+    card.querySelector('button').addEventListener('click', () => openVisaModal(v.iso));
+    visaGrid.appendChild(card);
+  });
+}
+renderVisas('all');
+const visaTabs = document.querySelectorAll('#visaTabs .filter-tab');
+visaTabs.forEach(tab => tab.addEventListener('click', () => {
+  visaTabs.forEach(t => t.classList.toggle('active', t === tab));
+  renderVisas(tab.dataset.vtype);
+}));
+
+const visaModal = document.getElementById('visaModal');
+function openVisaModal(iso){
+  const v = VISAS.find(x => x.iso === iso);
+  if(!v) return;
+  document.getElementById('visaModalFlag').src = `https://flagcdn.com/w160/${v.iso}.jpg`;
+  document.getElementById('visaModalFlag').alt = `Flag of ${v.title}`;
+  document.getElementById('visaModalType').textContent = v.typeLabel;
+  document.getElementById('visaModalTitle').textContent = v.title + ' Visa';
+  const inr = Math.round(v.usd * USD_TO_INR / 10) * 10;
+  document.getElementById('visaDetailGrid').innerHTML = `
+    <div class="visa-detail-item"><div class="lbl">Processing Time</div><div class="val">${v.processing}</div></div>
+    <div class="visa-detail-item"><div class="lbl">Validity</div><div class="val">${v.validity}</div></div>
+    <div class="visa-detail-item"><div class="lbl">Stay Duration</div><div class="val">${v.stay}</div></div>
+    <div class="visa-detail-item"><div class="lbl">Entries</div><div class="val">${v.entries}</div></div>
+    <div class="visa-detail-item" style="grid-column:1/-1;"><div class="lbl">Fee (per person)</div><div class="val">${v.usd === 0 ? 'Free' : '$'+v.usd.toLocaleString('en-US')+' · ≈ ₹'+inr.toLocaleString('en-IN')}</div></div>
+  `;
+  document.getElementById('visaDocsList').innerHTML = v.docs.map(d => `
+    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>${d}</li>
+  `).join('') + `<li style="border-top:1px solid #F1EADA; margin-top:6px; padding-top:12px; color:var(--muted); font-size:13px;">${v.note}</li>`;
+  document.getElementById('visaModalCta').onclick = () => { closeVisaModal(); document.getElementById('contact').scrollIntoView({behavior:'smooth'}); };
+  visaModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeVisaModal(){ visaModal.classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('visaModalClose').addEventListener('click', closeVisaModal);
+visaModal.addEventListener('click', (e) => { if(e.target === visaModal) closeVisaModal(); });
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeVisaModal(); });
+
+const grid = document.getElementById('destGrid');
+function renderGrid(region){
+  grid.innerHTML = '';
+  const items = region === 'all' ? DESTINATIONS
+    : region === 'trending' ? DESTINATIONS.filter(d => d.flag === 'trending')
+    : DESTINATIONS.filter(d => d.region === region);
+  items.forEach(d => {
+    const card = document.createElement('div');
+    card.className = 'boarding-card';
+    card.innerHTML = `
+      <div class="card-photo">
+        <img src="https://flagcdn.com/w640/${d.iso}.jpg" alt="Flag of ${d.title}" loading="lazy">
+        ${d.flag ? `<div class="card-flag ${d.flag}">${d.flag === 'evisa' ? 'e-Visa' : d.flag}</div>` : ''}
+        <div class="card-stamp-badge">${ICONS[d.code]}</div>
+        <div class="card-code-tag">${(CODES[d.c]||d.c.slice(0,3).toUpperCase())}</div>
+      </div>
+      <div class="card-body">
+        <div class="region-tag">${d.tag}</div>
+        <h3>${d.title}</h3>
+        <p>${d.blurb}</p>
+        <div class="card-tags">${d.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+        <div class="card-footer">
+          <span class="price">${formatPrice(d.usd)}</span>
+          <button type="button" class="book" data-code="${d.code}">View Routes &nbsp;→</button>
+        </div>
+      </div>
+    `;
+    card.querySelector('.book').addEventListener('click', () => openModal(d.code));
+    grid.appendChild(card);
+  });
+}
+renderGrid('all');
+
+const tabs = document.querySelectorAll('#regionTabs .filter-tab');
+function setRegion(region){
+  tabs.forEach(t => t.classList.toggle('active', t.dataset.region === region));
+  renderGrid(region);
+  document.getElementById('destinations').scrollIntoView({behavior:'smooth'});
+}
+tabs.forEach(tab => tab.addEventListener('click', () => { tabs.forEach(t=>t.classList.toggle('active', t===tab)); renderGrid(tab.dataset.region); }));
+
+/* ---------- Hero search ---------- */
+function heroSearch(){
+  const q = document.getElementById('heroSearch').value.trim().toLowerCase();
+  if(!q) return;
+  const match = DESTINATIONS.find(d => d.title.toLowerCase().includes(q) || d.c.toLowerCase().includes(q));
+  setRegion('all');
+  if(match){ setTimeout(() => openModal(match.code), 400); }
+  else{ document.getElementById('destinations').scrollIntoView({behavior:'smooth'}); }
+}
+document.getElementById('heroSearchBtn').addEventListener('click', heroSearch);
+document.getElementById('heroSearch').addEventListener('keydown', e => { if(e.key === 'Enter') heroSearch(); });
+
+/* ---------- Route modal ---------- */
+const routeModal = document.getElementById('routeModal');
+const modalRegion = document.getElementById('modalRegion');
+const modalTitle = document.getElementById('modalTitle');
+const modalDesc = document.getElementById('modalDesc');
+const modalRoutes = document.getElementById('modalRoutes');
+const modalCta = document.getElementById('modalCta');
+
+function openModal(code){
+  const d = DESTINATIONS.find(x => x.code === code);
+  if(!d) return;
+  modalRegion.textContent = d.tag;
+  modalTitle.textContent = d.title;
+  modalDesc.textContent = d.blurb;
+  modalRoutes.innerHTML = buildRoutes(d).map(r => `
+    <div class="route-item">
+      <div><div class="r-name">${r.name}</div><div class="r-desc">${r.desc}</div></div>
+      <div class="r-days">${r.days}</div>
+    </div>
+  `).join('');
+  modalCta.onclick = () => { closeModal(); document.getElementById('contact').scrollIntoView({behavior:'smooth'}); };
+  routeModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){ routeModal.classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('modalClose').addEventListener('click', closeModal);
+routeModal.addEventListener('click', (e) => { if(e.target === routeModal) closeModal(); });
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+/* ---------- Tours data ---------- */
+const TOURS = [
+  {title:"Grand Europe Explorer", region:"europe", countries:["France","Italy","Switzerland"], duration:"12 Days / 11 Nights", dates:"12 Sep 2026 – 24 Sep 2026", status:"open", statusLabel:"Booking Open", group:"Group", desc:"Paris to the Alps to the Amalfi Coast — a single sweeping loop through three of Europe's most-loved countries.", usd:3190, photo:"paris,switzerland,italy,travel"},
+  {title:"Nordic Lights Circuit", region:"europe", countries:["Norway","Sweden","Netherlands"], duration:"10 Days / 9 Nights", dates:"18 Nov 2026 – 27 Nov 2026", status:"open", statusLabel:"Booking Open", group:"Group", desc:"Fjords, aurora chasing and canal cities — a cool-season route built around Nordic light.", usd:2690, photo:"norway,aurora,fjord"},
+  {title:"Southeast Asia Combo", region:"asia", countries:["Thailand","Laos","Indonesia"], duration:"11 Days / 10 Nights", dates:"14 Feb 2027 – 24 Feb 2027", status:"almost", statusLabel:"Almost Full", group:"Group", desc:"Bangkok street food, Mekong sunrises and Bali temple gates, all on one easy multi-country pass.", usd:1990, photo:"thailand,bali,southeast-asia"},
+  {title:"Maldives Honeymoon Escape", region:"asia", countries:["The Maldives"], duration:"6 Days / 5 Nights", dates:"5 Dec 2026 – 10 Dec 2026", status:"open", statusLabel:"Booking Open", group:"Couples", desc:"An overwater villa, a house reef, and nothing else on the agenda.", usd:2690, photo:"maldives,honeymoon,overwater"},
+  {title:"Japan Highlights", region:"asia", countries:["Japan"], duration:"8 Days / 7 Nights", dates:"28 Mar 2026 – 4 Apr 2026", status:"closed", statusLabel:"Sold Out", group:"Group", desc:"Tokyo neon to Kyoto temples, timed to cherry blossom season.", usd:2450, photo:"tokyo,kyoto,cherryblossom"},
+  {title:"Kiwi Adventure", region:"oceania", countries:["New Zealand"], duration:"9 Days / 8 Nights", dates:"6 Jan 2027 – 14 Jan 2027", status:"open", statusLabel:"Booking Open", group:"Group", desc:"South Island fjords and glacier hikes by campervan, no fixed schedule required.", usd:2790, photo:"new-zealand,fjord,campervan"},
+  {title:"Amazon &amp; Rockies Dual Adventure", region:"americas", countries:["Brazil","Canada"], duration:"10 Days / 9 Nights", dates:"22 Jun 2026 – 1 Jul 2026", status:"open", statusLabel:"Booking Open", group:"Group", desc:"Rio's coastline followed by the Canadian Rockies — two continents, one long summer trip.", usd:2990, photo:"rio,rockies,canada"},
+];
+const tourGrid = document.getElementById('tourGrid');
+function renderTours(region){
+  tourGrid.innerHTML = '';
+  const items = region === 'all' ? TOURS : TOURS.filter(t => t.region === region);
+  items.forEach(t => {
+    const card = document.createElement('div');
+    card.className = 'tour-card';
+    const inr = Math.round(t.usd * USD_TO_INR / 10) * 10;
+    card.innerHTML = `
+      <div class="tour-photo">
+        <img src="https://loremflickr.com/500/320/${t.photo}" alt="${t.title}" loading="lazy">
+        <div class="tour-status ${t.status}">${t.statusLabel}</div>
+        <div class="tour-group">${t.group}</div>
+      </div>
+      <div class="tour-body">
+        <div class="tour-duration">${t.duration}</div>
+        <h3>${t.title}</h3>
+        <div class="tour-dates">${t.dates}</div>
+        <p class="desc">${t.desc}</p>
+        <div class="tour-countries">${t.countries.map(c=>`<span>${c}</span>`).join('')}</div>
+        <div class="tour-footer">
+          <span class="price">
+            <span class="usd" style="font-family:var(--font-display); font-weight:700; color:var(--orange); font-size:17px; display:block;">$${t.usd.toLocaleString('en-US')}</span>
+            <span class="inr" style="font-family:var(--font-mono); font-size:11px; color:var(--muted);">₹${inr.toLocaleString('en-IN')} · per person</span>
+          </span>
+        </div>
+        <div class="tour-actions">
+          <button class="details">View Details</button>
+          <button class="book" ${t.status === 'closed' ? 'disabled style="opacity:.5;cursor:not-allowed;"' : ''}>${t.status === 'closed' ? 'Sold Out' : 'Book Now'}</button>
+        </div>
+      </div>
+    `;
+    card.querySelector('.details').addEventListener('click', () => {
+      alert(`${t.title}\n${t.duration}\n${t.dates}\n\n${t.desc}\n\nFrom $${t.usd.toLocaleString('en-US')} / ₹${inr.toLocaleString('en-IN')} per person.`);
+    });
+    if(t.status !== 'closed'){
+      card.querySelector('.book').addEventListener('click', () => document.getElementById('contact').scrollIntoView({behavior:'smooth'}));
+    }
+    tourGrid.appendChild(card);
+  });
+}
+renderTours('all');
+const tourTabs = document.querySelectorAll('#tourTabs .filter-tab');
+tourTabs.forEach(tab => tab.addEventListener('click', () => {
+  tourTabs.forEach(t => t.classList.toggle('active', t === tab));
+  renderTours(tab.dataset.tregion);
+}));
+
+/* ---------- FAQ accordion ---------- */
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+
+/* ---------- Blog ---------- */
+const BLOG_POSTS = [
+  {tag:"Guide", author:"Travel Smile Team", date:"12 Jul 2026", title:"10 Underrated Countries to Visit Before Everyone Else Does", photo:"faroe-islands,laos"},
+  {tag:"Budget", author:"Travel Smile Team", date:"2 Jun 2026", title:"The Real Cost of a Two-Week Japan Trip in 2026", photo:"tokyo,budget,travel"},
+  {tag:"Inspiration", author:"Travel Smile Team", date:"19 Apr 2026", title:"Why the Faroe Islands Should Be Your Next Big Trip", photo:"faroe-islands,waterfall"},
+  {tag:"Tips", author:"Travel Smile Team", date:"3 Mar 2026", title:"Packing Smart: One Bag for Three Climates", photo:"packing,suitcase,travel"},
+];
+const blogGrid = document.getElementById('blogGrid');
+BLOG_POSTS.forEach(b => {
+  const card = document.createElement('div');
+  card.className = 'blog-card';
+  card.innerHTML = `
+    <div class="blog-photo"><img src="https://loremflickr.com/400/260/${b.photo}" alt="${b.title}" loading="lazy"></div>
+    <div class="blog-body">
+      <div class="blog-tag">${b.tag}</div>
+      <div class="blog-meta">${b.author} · ${b.date}</div>
+      <h3>${b.title}</h3>
+    </div>
+  `;
+  blogGrid.appendChild(card);
+});
+
+/* ---------- Countries we serve ---------- */
+const pillsEl = document.getElementById('countryPills');
+DESTINATIONS.forEach(d => {
+  const pill = document.createElement('button');
+  pill.type = 'button';
+  pill.className = 'country-pill';
+  pill.textContent = d.title;
+  pill.addEventListener('click', () => openModal(d.code));
+  pillsEl.appendChild(pill);
+});
+
+/* ---------- Toast notifications ---------- */
+const toastEl = document.getElementById('toast');
+const toastMsgEl = document.getElementById('toastMsg');
+let toastTimer;
+function showToast(message){
+  toastMsgEl.textContent = message;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3200);
+}
+
+/* ---------- Newsletter form ---------- */
+document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const emailInput = document.getElementById('newsletterEmail');
+  const email = emailInput.value.trim();
+  if(!email || !email.includes('@')){ showToast('Please enter a valid email address.'); return; }
+  showToast(`You're on the list! Trip ideas are headed to ${email}.`);
+  emailInput.value = '';
+});
+
+/* ---------- Info modal (legal pages) ---------- */
+const INFO_CONTENT = {
+  privacy: {
+    title:"Privacy Policy",
+    body:"Travel Smile collects only what's needed to plan and book your trip — traveller names, contact details, and payment information. We never sell your data to third parties, and it's used solely to build your itinerary and keep you updated before and during travel. To request your data or ask a question, email hello@travelsmile.co."
+  },
+  terms: {
+    title:"Terms &amp; Conditions",
+    body:"By booking with Travel Smile you agree to our standard terms: prices are quoted per person in USD and INR at the time of booking, a deposit is required within 48 hours to confirm your seats, and full balance is due ahead of departure. Detailed terms are included in every booking confirmation email."
+  },
+  cancellation: {
+    title:"Cancellation Policy",
+    body:"Cancel 30+ days before departure for a full refund minus a small processing fee. Between 15–29 days out, 50% of the trip cost is refundable. Inside 14 days, bookings are non-refundable but can usually be transferred to another traveller at no extra charge."
+  },
+  cookies: {
+    title:"Cookies",
+    body:"We use a small number of cookies to remember your currency preference and keep your wishlist active during your visit. We don't use advertising or third-party tracking cookies on this site."
+  }
+};
+const infoOverlay = document.getElementById('infoOverlay');
+const infoTitle = document.getElementById('infoTitle');
+const infoBody = document.getElementById('infoBody');
+function openInfoModal(key){
+  const c = INFO_CONTENT[key];
+  if(!c) return;
+  infoTitle.innerHTML = c.title;
+  infoBody.textContent = c.body;
+  infoOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeInfoModal(){ infoOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('infoClose').addEventListener('click', closeInfoModal);
+infoOverlay.addEventListener('click', (e) => { if(e.target === infoOverlay) closeInfoModal(); });
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeInfoModal(); });
+
+/* ---------- Login button feedback ---------- */
+document.querySelector('.login-btn').addEventListener('click', () => showToast('Account login is coming soon — reach us at hello@travelsmile.co in the meantime.'));
+</script>
+</body>
+</html>
