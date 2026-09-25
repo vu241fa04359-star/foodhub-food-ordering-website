@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Space Info — Notes on the Sky</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">Space <em>Info</em></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#planets">Planets</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#missions">Missions</a></li>
+      <li><a href="#galaxies">Galaxies</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="stars">
+    <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div>
+  </div>
+  <div class="wrap">
+    <div class="hero-content">
+      <p class="kicker">A field guide to the sky</p>
+      <h1>Notes on the universe, kept plainly.</h1>
+      <p class="lede">Space Info is a running record of planets, missions and galaxies — written for anyone curious about what's above us, without the jargon.</p>
+      <div class="hero-actions">
+        <a href="#planets" class="btn btn-solid">Start with the planets</a>
+        <a href="#timeline" class="btn btn-outline">See the timeline</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <p class="kicker" style="margin-bottom:8px;">About Space Info</p>
+        <h2>Why we keep these notes</h2>
+        <div class="rule"></div>
+        <p class="lede">Space is enormous and mostly silent, but the small facts about it are worth collecting. This page is our shelf of them — planets we can name, missions we still talk about, and galaxies too far to visit but not too far to understand.</p>
+      </div>
+      <div class="about-list">
+        <div class="about-item"><div class="num">01</div><div><h3>Observation first</h3><p>Everything here starts from what telescopes and probes have actually measured, not speculation.</p></div></div>
+        <div class="about-item"><div class="num">02</div><div><h3>Plain language</h3><p>Technical terms are explained the first time they appear, or left out entirely.</p></div></div>
+        <div class="about-item"><div class="num">03</div><div><h3>Always growing</h3><p>New missions launch, new images arrive — this page is updated as the record changes.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" style="padding:100px 6%;">
+  <div class="stats-grid">
+    <div class="stat"><div class="n">8</div><div class="l">Planets in our solar system</div></div>
+    <div class="stat"><div class="n">200B+</div><div class="l">Estimated galaxies in the observable universe</div></div>
+    <div class="stat"><div class="n">27,000</div><div class="l">km/h — the ISS orbital speed</div></div>
+    <div class="stat"><div class="n">4.6B</div><div class="l">Years since the solar system formed</div></div>
+  </div>
+</section>
+
+<section id="planets">
+  <div class="wrap">
+    <div class="head"><h2>The solar system, in order</h2><p class="lede">Ordered by distance from the Sun — nearest first.</p></div>
+    <div class="planet-grid">
+      <div class="planet-card"><div class="planet-top"><div class="planet mercury"></div><div><div class="dist">0.39 AU</div></div></div><h3>Mercury</h3><p>The smallest planet, and the fastest around the Sun.</p><button onclick="showPlanet('Mercury')">Read more</button></div>
+      <div class="planet-card"><div class="planet-top"><div class="planet venus"></div><div><div class="dist">0.72 AU</div></div></div><h3>Venus</h3><p>Hotter than Mercury, thanks to a dense, trapping atmosphere.</p><button onclick="showPlanet('Venus')">Read more</button></div>
+      <div class="planet-card"><div class="planet-top"><div class="planet earth"></div><div><div class="dist">1.00 AU</div></div></div><h3>Earth</h3><p>The only planet known to support life, so far.</p><button onclick="showPlanet('Earth')">Read more</button></div>
+      <div class="planet-card"><div class="planet-top"><div class="planet mars"></div><div><div class="dist">1.52 AU</div></div></div><h3>Mars</h3><p>Iron oxide across its surface gives Mars its red color.</p><button onclick="showPlanet('Mars')">Read more</button></div>
+      <div class="planet-card"><div class="planet-top"><div class="planet jupiter"></div><div><div class="dist">5.20 AU</div></div></div><h3>Jupiter</h3><p>The largest planet, with a storm bigger than Earth.</p><button onclick="showPlanet('Jupiter')">Read more</button></div>
+      <div class="planet-card"><div class="planet-top"><div class="planet saturn"></div><div><div class="dist">9.58 AU</div></div></div><h3>Saturn</h3><p>Known for its rings, made mostly of ice and rock.</p><button onclick="showPlanet('Saturn')">Read more</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline" class="timeline">
+  <div class="wrap">
+    <div class="head"><h2>A short history of leaving Earth</h2></div>
+    <div class="tl-list">
+      <div class="tl-row"><div class="tl-year">1957</div><div><h3>Sputnik 1</h3><p>The first artificial satellite, launched by the Soviet Union, opens the space age.</p></div></div>
+      <div class="tl-row"><div class="tl-year">1969</div><div><h3>Apollo 11</h3><p>Neil Armstrong and Buzz Aldrin become the first humans to walk on the Moon.</p></div></div>
+      <div class="tl-row"><div class="tl-year">1977</div><div><h3>Voyager launches</h3><p>Twin probes begin a journey that will carry them beyond the solar system.</p></div></div>
+      <div class="tl-row"><div class="tl-year">1990</div><div><h3>Hubble deployed</h3><p>A space telescope begins returning some of the clearest images ever taken of deep space.</p></div></div>
+      <div class="tl-row"><div class="tl-year">2021</div><div><h3>James Webb launches</h3><p>The largest space telescope built extends our view further back in time.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="missions">
+  <div class="wrap">
+    <div class="head"><h2>Missions worth knowing</h2></div>
+    <div class="mission-grid">
+      <div class="mission-card"><div class="tag">Crewed</div><h3>Apollo 11</h3><p>The mission that first landed humans on the Moon, in July 1969.</p></div>
+      <div class="mission-card"><div class="tag">Uncrewed</div><h3>Voyager</h3><p>Two probes, still transmitting, now farther from Earth than anything else we've built.</p></div>
+      <div class="mission-card"><div class="tag">Observatory</div><h3>James Webb</h3><p>An infrared telescope studying the earliest galaxies ever observed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="galaxies">
+  <div class="wrap">
+    <div class="head"><h2>Neighboring galaxies</h2></div>
+    <div class="galaxy-grid">
+      <div class="galaxy-card"><div class="galaxy-img">🌌</div><div class="galaxy-body"><h3>Milky Way</h3><p>Home to our solar system, along with an estimated 100 to 400 billion other stars.</p></div></div>
+      <div class="galaxy-card"><div class="galaxy-img">🌀</div><div class="galaxy-body"><h3>Andromeda</h3><p>The nearest major galaxy, on a slow collision course with our own.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="head"><h2>A short gallery</h2></div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><span>🌌</span><h3>Deep space</h3></div>
+      <div class="gallery-item"><span>🌍</span><h3>Earth</h3></div>
+      <div class="gallery-item"><span>🚀</span><h3>Launch</h3></div>
+      <div class="gallery-item"><span>🪐</span><h3>Saturn</h3></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="head"><h2>Common questions</h2></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">How many planets are there? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Eight, since Pluto was reclassified as a dwarf planet in 2006 by the International Astronomical Union.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How far away is the nearest star? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Proxima Centauri, about 4.2 light-years away — roughly 40 trillion kilometers.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Could Space Info's facts change? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. Astronomy is an active field, and figures like galaxy counts are best estimates, updated as instruments improve.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you cover missions outside NASA? <span class="plus">+</span></button>
+        <div class="faq-a"><p>We aim to, including ESA, JAXA, Roscosmos and private missions, as the page grows.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <p class="kicker" style="margin-bottom:8px;">Get in touch</p>
+        <h2>Questions, corrections, ideas</h2>
+        <div class="rule"></div>
+        <p class="lede">Spotted something inaccurate, or want a topic covered? Send a note.</p>
+        <div class="about-list" style="margin-top:30px;">
+          <div class="about-item"><div class="num">＠</div><div><h3>Email</h3><p>hello@spaceinfo.example</p></div></div>
+          <div class="about-item"><div class="num">↻</div><div><h3>Response time</h3><p>Usually within two to three days.</p></div></div>
+        </div>
+      </div>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your name" required>
+        <input type="email" id="email" placeholder="Your email" required>
+        <textarea id="message" placeholder="Your message" rows="5" required></textarea>
+        <button type="submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="logo">Space <em>Info</em></div>
+      <ul class="foot-links">
+        <li><a href="#planets">Planets</a></li>
+        <li><a href="#missions">Missions</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <p class="copyright">© 2026 Space Info. Notes kept for the curious.</p>
+  </div>
+</footer>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
